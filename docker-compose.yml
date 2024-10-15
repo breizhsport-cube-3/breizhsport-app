@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   nuxt:
     build:
@@ -14,19 +13,3 @@ services:
       - HOST=0.0.0.0
     stdin_open: true
     tty: true  
-    
-  mysql:
-    image: mysql:8.0
-    container_name: breizhsport-db
-    environment:
-      MYSQL_ROOT_PASSWORD: breizhsport
-      MYSQL_DATABASE: breizhsport
-      MYSQL_USER: breizhsport
-      MYSQL_PASSWORD: breizhsport
-    ports:
-      - "3306:3306"
-    volumes:
-      - mysql-data:/var/lib/mysql
-
-volumes:
-  mysql-data:
