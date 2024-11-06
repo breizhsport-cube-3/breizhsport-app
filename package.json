@@ -1,32 +1,31 @@
 {
   "name": "breizhsport-app",
   "private": true,
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@nuxtjs/i18n": "^8.5.5",
-    "@pinia/nuxt": "^0.5.5",
+    "@iconify-json/feather": "^1.2.0",
+    "@primevue/themes": "^4.2.1",
     "@tailwindcss/forms": "^0.5.9",
-    "@types/node": "^22.7.5",
-    "@vitejs/plugin-vue": "^5.1.4",
-    "autoprefixer": "^10.4.20",
-    "nuxt": "^3.13.0",
+    "pinia": "^2.2.6",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
-    "tailwindcss": "^3.4.13",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.2.1",
+    "tailwindcss": "^3.4.14",
     "vue": "^3.5.12",
-    "vue-i18n": "^10.0.0",
-    "vue-router": "latest"
+    "vue-i18n": "^10.0.4",
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
-    "@types/vue": "^2.0.0",
-    "nuxt-icon": "^1.0.0-beta.7"
+    "@vitejs/plugin-vue": "^5.1.4",
+    "autoprefixer": "^10.4.20",
+    "vite": "^5.4.10"
   }
 }

@@ -1,3 +1,3 @@
 .PHONY: format
 format:
-	yarn prettier pages/  --write
+	yarn prettier src/  --write

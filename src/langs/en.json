@@ -1,5 +1,5 @@
 {
-  "auth": { 
+  "auth": {
     "login": {
       "title": "Login",
       "description": "Welcome back! Sign in to your account.",
@@ -8,7 +8,9 @@
       "forgot_password": "Forgot password?",
       "sign_in": "Sign in",
       "dont_have_account": "Don't have an account? Sign up.",
-      "sign_up": "Sign up"
+      "sign_up": "Sign up",
+      "remember_me": "Remember me?",
+      "invalid_credentials": "Invalid email or password."
     },
     "register": {
       "title": "Register",

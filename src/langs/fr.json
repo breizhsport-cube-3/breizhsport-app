@@ -8,7 +8,9 @@
       "forgot_password": "Mot de passe oublié ?",
       "sign_in": "Se connecter",
       "dont_have_account": "Vous n'avez pas de compte ?",
-      "sign_up": "S'inscrire"
+      "sign_up": "S'inscrire",
+      "remember_me": "Se souvenir de moi ?",
+      "invalid_credentials": "Email ou mot de passe invalide"
     },
     "register": {
       "title": "Inscription",
