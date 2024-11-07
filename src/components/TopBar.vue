@@ -10,30 +10,58 @@
             </h1>
           </router-link>
         </div>
-        <div class="flex items-center space-x-4">
-          <router-link
-            to="/products"
-            class="text-gray-600 hover:text-primary-600"
-          >
-            {{ t("shop.navigation.products") }}
-          </router-link>
-          <div class="relative inline-block">
-            <button
-              ref="cartButton"
-              @click="toggleCart"
-              class="text-gray-600 hover:text-primary-600 p-2"
+        <div class="flex items-center space-x-2">
+          <Button
+            icon="pi pi-warehouse"
+            rounded
+            text
+            @click="router.push('/products')"
+          />
+          <div class="flex items-center relative">
+            <Button
+              type="button"
+              icon="pi pi-globe"
+              rounded
+              text
+              @click="languageOP.toggle($event)"
+            />
+            <OverlayPanel
+              ref="languageOP"
+              class="w-[150px]"
+              :breakpoints="{ '960px': '75vw', '640px': '100vw' }"
+              :showCloseIcon="true"
+              appendTo="body"
+              :baseZIndex="1000"
+              :autoZIndex="true"
             >
-              <i class="pi pi-shopping-cart"></i>
-              <span
-                v-if="cartStore.totalItems"
-                class="absolute -top-1 -right-1 bg-primary-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
-              >
-                {{ cartStore.totalItems }}
-              </span>
-            </button>
+              <div class="space-y-1">
+                <button
+                  v-for="option in localeOptions"
+                  :key="option.code"
+                  @click="handleLocaleChange(option.code); languageOP.hide()"
+                  class="w-full flex items-center gap-2 p-2 hover:bg-gray-50 rounded-md transition-colors"
+                  :class="{ 'bg-gray-50': option.code === locale }"
+                >
+                  <span :class="`fi fi-${option.flag}`"></span>
+                  <span class="text-sm">{{ option.label }}</span>
+                </button>
+              </div>
+            </OverlayPanel>
+          </div>
+          <div class="relative inline-block">
+            <Button
+              ref="cartButton"
+              icon="pi pi-shopping-cart"
+              rounded
+              text
+              @click="toggleCart"
+              :badge="cartStore.totalItems"
+            >
+             
+            </Button>
 
             <OverlayPanel
-              ref="op"
+              ref="cartOP"
               class="w-[400px]"
               :breakpoints="{ '960px': '75vw', '640px': '100vw' }"
               :showCloseIcon="true"
@@ -51,32 +79,36 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { ref, } from 'vue';
 import { useCartStore } from "../stores/cart";
 import { useI18n } from "vue-i18n";
 import Logo from "./Logo.vue";
 import MiniCart from "./MiniCart.vue";
 import OverlayPanel from "primevue/overlaypanel";
+import { availableLocales, setLocale } from '../i18n';
+import 'flag-icons/css/flag-icons.min.css';
+import Button from 'primevue/button';
+import { useRouter } from 'vue-router';
 
-const router = useRouter();
 const cartStore = useCartStore();
-const { t } = useI18n();
-const op = ref();
+const { t, locale } = useI18n();
+const languageOP = ref();
+const cartOP = ref();
+const router = useRouter();
+
+const localeOptions = Object.entries(availableLocales).map(([code, info]) => ({
+  code,
+  ...info
+}));
+
+const handleLocaleChange = (code) => {
+  setLocale(code);
+};
 
 const toggleCart = (event) => {
   event.stopPropagation();
-  op.value.toggle(event);
+  cartOP.value.toggle(event);
 };
 </script>
 
-<style scoped>
-:deep(.p-overlaypanel) {
-  margin-top: 0.5rem;
-}
 
-:deep(.p-overlaypanel:before),
-:deep(.p-overlaypanel:after) {
-  margin-left: -0.5rem;
-}
-</style>

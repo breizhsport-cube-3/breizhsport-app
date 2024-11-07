@@ -69,7 +69,7 @@
           <!-- Title -->
           <div class="flex items-start justify-between">
             <h1 class="text-3xl font-fredoka text-gray-900">
-              {{ product.name }}
+              {{ product.name[currentLocale] }}
             </h1>
           </div>
 
@@ -299,7 +299,7 @@
                 {{ t("shop.product.description.title") }}
               </h3>
               <p class="text-gray-600 leading-relaxed">
-                {{ product.description }}
+                {{ product.description[currentLocale] }}
               </p>
             </div>
 
@@ -311,7 +311,7 @@
                 </h3>
                 <ul class="space-y-3">
                   <li
-                    v-for="(feature, index) in product.features"
+                    v-for="(feature, index) in product.features[currentLocale]"
                     :key="index"
                     class="flex items-start gap-3"
                   >
@@ -328,7 +328,7 @@
                 </h3>
                 <ul class="space-y-3">
                   <li
-                    v-for="(instruction, index) in product.careInstructions"
+                    v-for="(instruction, index) in product.careInstructions[currentLocale]"
                     :key="index"
                     class="flex items-start gap-3"
                   >
@@ -463,7 +463,8 @@ const selectedColor = ref(null);
 const selectedModel = ref(null);
 const showSizeGuide = ref(false);
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
+const currentLocale = computed(() => locale.value);
 
 const sizesContainer = ref(null);
 const colorsContainer = ref(null);
@@ -512,15 +513,20 @@ onMounted(() => {
 // Mock product data - À remplacer par vos données réelles
 const product = ref({
   id: route.params.id,
-  name: "T-Shirt Essential Coton",
+  name: {
+    fr: "T-Shirt Essential Coton",
+    en: "Essential Cotton T-Shirt"
+  },
   brand: "Jules",
   price: 29.99,
   oldPrice: 39.99,
   rating: 4.8,
   reviewCount: 256,
   inStock: true,
-  description:
-    "Ce t-shirt essentiel est confectionné en coton biologique de première qualité, offrant un confort optimal tout au long de la journée. Sa coupe classique et polyvalente convient à toutes les morphologies, tandis que le tissu respirant en fait une pièce indispensable de votre garde-robe.",
+  description: {
+    fr: "Ce t-shirt essentiel est confectionné en coton biologique de première qualité, offrant un confort optimal tout au long de la journée. Sa coupe classique et polyvalente convient à toutes les morphologies, tandis que le tissu respirant en fait une pièce indispensable de votre garde-robe.",
+    en: "This essential t-shirt is made from premium organic cotton, offering optimal comfort throughout the day. Its classic and versatile cut suits all body types, while the breathable fabric makes it an essential piece in your wardrobe."
+  },
   images: [
     "/images/products/727593_9010_V1.png",
     "/images/products/727593_9010_V3.png",
@@ -548,17 +554,6 @@ const product = ref({
     { id: "khaki", value: "#C3B091", available: false },
     { id: "taupe", value: "#483C32", available: true },
   ],
-  models: [
-    { id: "standard", price: 29.99 },
-    { id: "premium", price: 34.99 },
-  ],
-  features: [
-    "100% coton biologique",
-    "Col rond renforcé",
-    "Coupe classique",
-    "Lavable en machine à 30°",
-    "Fabriqué en France",
-  ],
   sizeGuideData: [
     { size: "XS", chest: "86-91 cm", waist: "71-76 cm", hips: "86-91 cm" },
     { size: "S", chest: "91-97 cm", waist: "76-81 cm", hips: "91-97 cm" },
@@ -572,13 +567,38 @@ const product = ref({
       hips: "112-117 cm",
     },
   ],
-  careInstructions: [
-    "Lavable en machine à 30°C",
-    "Ne pas utiliser de sèche-linge",
-    "Repasser à température moyenne",
-    "Ne pas nettoyer à sec",
-    "Laver avec des couleurs similaires",
-  ],
+  features: {
+    fr: [
+      "100% coton biologique",
+      "Col rond renforcé",
+      "Coupe classique",
+      "Lavable en machine à 30°",
+      "Fabriqué en France"
+    ],
+    en: [
+      "100% organic cotton",
+      "Reinforced crew neck",
+      "Classic fit",
+      "Machine washable at 30°",
+      "Made in France"
+    ]
+  },
+  careInstructions: {
+    fr: [
+      "Lavable en machine à 30°C",
+      "Ne pas utiliser de sèche-linge",
+      "Repasser à température moyenne",
+      "Ne pas nettoyer à sec",
+      "Laver avec des couleurs similaires"
+    ],
+    en: [
+      "Machine wash at 30°C",
+      "Do not tumble dry",
+      "Iron at medium temperature",
+      "Do not dry clean",
+      "Wash with similar colors"
+    ]
+  }
 });
 
 onMounted(() => {
