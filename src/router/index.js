@@ -1,63 +1,64 @@
 import { createRouter, createWebHistory } from "vue-router";
-import { useAuthStore } from "../stores/auth";
-import Login from "../views/Login.vue";
 import Home from "../views/Home.vue";
+
+import Products from "../views/Products.vue";
+import Product from "../views/Product.vue";
+import Cart from "../views/Cart.vue";
+import Checkout from "../views/Checkout.vue";
+import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
-import ForgotPassword from "../views/Forgot-Password.vue";
+import ForgotPassword from "../views/ForgotPassword.vue";
 
 const routes = [
   {
     path: "/",
-    redirect: "/home",
+    name: "Home",
+    component: Home,
+  },
+  {
+    path: "/products",
+    name: "Products",
+    component: Products,
+  },
+  {
+    path: "/product/:id",
+    name: "Product",
+    component: Product,
+  },
+  {
+    path: "/cart",
+    name: "Cart",
+    component: Cart,
+  },
+  {
+    path: "/checkout",
+    name: "checkout",
+    component: Checkout,
   },
   {
     path: "/login",
-    name: "Login",
+    name: "login",
     component: Login,
-    meta: { requiresAuth: false },
   },
   {
     path: "/register",
-    name: "Register",
+    name: "register",
     component: Register,
-    meta: { requiresAuth: false },
   },
   {
     path: "/forgot-password",
-    name: "ForgotPassword",
+    name: "forgot-password",
     component: ForgotPassword,
-    meta: { requiresAuth: false },
   },
-  {
-    path: "/home",
-    name: "Home",
-    component: Home,
-    meta: { requiresAuth: true },
-  },
-  // Route 404
   {
     path: "/:pathMatch(.*)*",
-    redirect: "/home",
+    redirect: "/",
   },
 ];
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
-});
-
-// Navigation guard
-router.beforeEach((to, from, next) => {
-  const authStore = useAuthStore();
-  const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
-
-  if (requiresAuth && !authStore.isAuthenticated) {
-    next("/login");
-  } else if (to.path === "/login" && authStore.isAuthenticated) {
-    next("/home");
-  } else {
-    next();
-  }
 });
 
 export default router;

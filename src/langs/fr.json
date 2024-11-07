@@ -32,5 +32,138 @@
       "remember_password": "Vous avez déjà un compte ?",
       "sign_in": "Se connecter"
     }
+  },
+  "shop": {
+    "navigation": {
+      "products": "Produits",
+      "cart": "Panier"
+    },
+    "search": {
+      "placeholder": "Rechercher un produit...",
+      "no_results": "Aucun résultat trouvé pour \"{query}\"",
+      "reset": "Réinitialiser la recherche"
+    },
+    "filters": {
+      "categories": "Catégories",
+      "price": "Prix",
+      "price_range": "Prix: {min}€ - {max}€",
+      "search_label": "Recherche: {query}"
+    },
+    "product": {
+      "add_to_cart": "Ajouter au panier",
+      "buy_now": "Acheter maintenant",
+      "size": "Taille",
+      "quantity": "Quantité",
+      "description": {
+        "title": "Description",
+        "features": "Caractéristiques",
+        "care": "Entretien"
+      },
+      "features": "Caractéristiques",
+      "delivery": "Livraison",
+      "delivery_info": {
+        "free": "Livraison gratuite en France métropolitaine",
+        "estimate": "Délai de livraison estimé : 2-4 jours ouvrés"
+      },
+      "color": {
+        "title": "Couleur",
+        "variants": {
+          "black": "Noir",
+          "white": "Blanc",
+          "blue": "Bleu",
+          "red": "Rouge",
+          "green": "Vert"
+        }
+      },
+      "model": {
+        "title": "Modèle",
+        "standard": "Standard",
+        "premium": "Premium",
+        "pro": "Professionnel"
+      },
+      "reviews": "avis",
+      "stock": {
+        "in_stock": "En stock",
+        "out_of_stock": "Rupture de stock"
+      },
+      "size_guide": "Guide des tailles",
+      "size_guide_table": {
+        "size": "Taille",
+        "chest": "Tour de poitrine",
+        "waist": "Tour de taille",
+        "hips": "Tour de hanches"
+      },
+      "size_guide_how_to_measure": {
+        "title": "Comment prendre vos mesures",
+        "chest": "Mesurez horizontalement autour de la partie la plus large de votre poitrine",
+        "waist": "Mesurez autour de votre taille naturelle, au niveau du nombril",
+        "hips": "Mesurez horizontalement autour de la partie la plus large de vos hanches"
+      },
+      "out_of_stock": "Rupture de stock",
+      "gallery": "Galerie d'images"
+    },
+    "cart": {
+      "title": "Panier",
+      "empty": "Votre panier est vide",
+      "subtotal": "Sous-total",
+      "shipping": "Livraison",
+      "total": "Total",
+      "free": "Gratuite",
+      "checkout": "Commander",
+      "view_cart": "Voir le panier",
+      "added_to_cart": "Produit ajouté au panier",
+      "continue_shopping": "Continuer mes achats",
+      "summary": "Récapitulatif de la commande",
+      "unit_price": "Prix unitaire"
+    }
+  },
+  "checkout": {
+    "steps": {
+      "shipping": "Livraison",
+      "payment": "Paiement",
+      "confirmation": "Confirmation"
+    },
+    "shipping": {
+      "title": "Informations de livraison",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "address": "Adresse",
+      "city": "Ville",
+      "postalCode": "Code postal"
+    },
+    "payment": {
+      "title": "Paiement"
+    },
+    "confirmation": {
+      "title": "Confirmation"
+    },
+    "summary": {
+      "title": "Récapitulatif de la commande",
+      "quantity": "Quantité",
+      "subtotal": "Sous-total",
+      "shipping": "Frais de livraison",
+      "total": "Total"
+    },
+    "back": "Retour",
+    "next": "Suivant",
+    "placeOrder": "Commander"
+  },
+  "validation": {
+    "required": "Ce champ est requis",
+    "email": "Veuillez entrer une adresse email valide",
+    "minLength": "Ce champ doit contenir au moins {min} caractères"
+  },
+  "footer": {
+    "about_text": "Votre destination pour les équipements sportifs en Bretagne. Qualité, tradition et innovation pour tous les sportifs.",
+    "quick_links": "Liens rapides",
+    "home": "Accueil",
+    "products": "Produits",
+    "about": "À propos",
+    "contact": "Contact",
+    "categories": "Catégories",
+    "contact_us": "Contactez-nous",
+    "rights": "Tous droits réservés."
   }
 }

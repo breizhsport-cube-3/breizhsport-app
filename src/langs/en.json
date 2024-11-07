@@ -32,5 +32,136 @@
       "remember_password": "Remember your password?",
       "sign_in": "Sign in"
     }
+  },
+  "shop": {
+    "navigation": {
+      "products": "Products",
+      "cart": "Cart"
+    },
+    "search": {
+      "placeholder": "Search for a product...",
+      "no_results": "No results found for \"{query}\"",
+      "reset": "Reset search"
+    },
+    "filters": {
+      "categories": "Categories",
+      "price": "Price",
+      "price_range": "Price: {min}€ - {max}€",
+      "search_label": "Search: {query}"
+    },
+    "product": {
+      "add_to_cart": "Add to cart",
+      "buy_now": "Buy now",
+      "size": "Size",
+      "quantity": "Quantity",
+      "description": {
+        "title": "Description",
+        "features": "Features",
+        "care": "Care"
+      },
+      "features": "Features",
+      "delivery": "Delivery",
+      "delivery_info": {
+        "free": "Free delivery in Metropolitan France",
+        "estimate": "Estimated delivery time: 2-4 business days"
+      },
+      "color": {
+        "title": "Color",
+        "variants": {
+          "black": "Black",
+          "white": "White",
+          "blue": "Blue",
+          "red": "Red",
+          "green": "Green"
+        }
+      },
+      "model": {
+        "title": "Model",
+        "standard": "Standard",
+        "premium": "Premium",
+        "pro": "Professional"
+      },
+      "reviews": "reviews",
+      "stock": {
+        "in_stock": "In stock",
+        "out_of_stock": "Out of stock"
+      },
+      "size_guide": "Size guide",
+      "size_guide_table": {
+        "size": "Size",
+        "chest": "Chest",
+        "waist": "Waist",
+        "hips": "Hips"
+      },
+      "size_guide_how_to_measure": {
+        "title": "How to measure",
+        "chest": "Measure horizontally around the fullest part of your chest",
+        "waist": "Measure around your natural waistline at navel level",
+        "hips": "Measure horizontally around the fullest part of your hips"
+      },
+      "out_of_stock": "Out of stock",
+      "gallery": "Image gallery"
+    },
+    "cart": {
+      "title": "Cart",
+      "empty": "Your cart is empty",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "total": "Total",
+      "free": "Free",
+      "checkout": "Checkout",
+      "summary": "Order Summary",
+      "unit_price": "Unit price",
+      "continue_shopping": "Continue shopping"
+    }
+  },
+  "checkout": {
+    "steps": {
+      "shipping": "Shipping",
+      "payment": "Payment",
+      "confirmation": "Confirmation"
+    },
+    "shipping": {
+      "title": "Shipping Information",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "city": "City",
+      "postalCode": "Postal Code"
+    },
+    "payment": {
+      "title": "Payment"
+    },
+    "confirmation": {
+      "title": "Confirmation"
+    },
+    "summary": {
+      "title": "Order Summary",
+      "quantity": "Quantity",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping fees",
+      "total": "Total"
+    },
+    "back": "Back",
+    "next": "Next",
+    "placeOrder": "Place Order"
+  },
+  "validation": {
+    "required": "This field is required",
+    "email": "Please enter a valid email address",
+    "minLength": "This field must contain at least {min} characters"
+  },
+  "footer": {
+    "about_text": "Your destination for sports equipment in Brittany. Quality, tradition and innovation for all athletes.",
+    "quick_links": "Quick links",
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact",
+    "categories": "Categories",
+    "contact_us": "Contact us",
+    "rights": "All rights reserved."
   }
 }
