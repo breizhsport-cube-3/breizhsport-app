@@ -1,5 +1,6 @@
 {
   "auth": {
+    "welcome": "Bienvenue",
     "login": {
       "title": "Connexion",
       "description": "Bienvenue ! Connectez-vous à votre compte.",
@@ -10,8 +11,14 @@
       "dont_have_account": "Vous n'avez pas de compte ?",
       "sign_up": "S'inscrire",
       "remember_me": "Se souvenir de moi ?",
-      "invalid_credentials": "Email ou mot de passe invalide"
+      "invalid_credentials": "Email ou mot de passe invalide",
+      "logout": "Se déconnecter",
+      "my_account": "Mon compte",
+      "email_placeholder": "Entrez votre email",
+      "password_placeholder": "Entrez votre mot de passe",
+      "submit": "Se connecter"
     },
+    "or": "ou",
     "register": {
       "title": "Inscription",
       "description": "Découvrez les sports bretons et embarquez avec nous !",
@@ -165,5 +172,9 @@
     "categories": "Catégories",
     "contact_us": "Contactez-nous",
     "rights": "Tous droits réservés."
-  }
+  },
+  "common": {
+    "back": "Retour"
+  },
+  "or": "ou"
 }

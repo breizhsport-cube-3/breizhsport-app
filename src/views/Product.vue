@@ -328,7 +328,9 @@
                 </h3>
                 <ul class="space-y-3">
                   <li
-                    v-for="(instruction, index) in product.careInstructions[currentLocale]"
+                    v-for="(instruction, index) in product.careInstructions[
+                      currentLocale
+                    ]"
                     :key="index"
                     class="flex items-start gap-3"
                   >
@@ -515,7 +517,8 @@ const product = ref({
   id: route.params.id,
   name: {
     fr: "T-Shirt Essential Coton",
-    en: "Essential Cotton T-Shirt"
+    en: "Essential Cotton T-Shirt",
+    br: "T-Shirt Koton Diazez",
   },
   brand: "Jules",
   price: 29.99,
@@ -525,7 +528,8 @@ const product = ref({
   inStock: true,
   description: {
     fr: "Ce t-shirt essentiel est confectionné en coton biologique de première qualité, offrant un confort optimal tout au long de la journée. Sa coupe classique et polyvalente convient à toutes les morphologies, tandis que le tissu respirant en fait une pièce indispensable de votre garde-robe.",
-    en: "This essential t-shirt is made from premium organic cotton, offering optimal comfort throughout the day. Its classic and versatile cut suits all body types, while the breathable fabric makes it an essential piece in your wardrobe."
+    en: "This essential t-shirt is made from premium organic cotton, offering optimal comfort throughout the day. Its classic and versatile cut suits all body types, while the breathable fabric makes it an essential piece in your wardrobe.",
+    br: "Ar t-shirt diazez-mañ a zo graet gant koton biologel a galite uhel, o kinnig ur c'hompez gwellañ a-hed an deiz. E droc'h klasel hag hollimplij a glot gant an holl gorfadurezh, e-pad ma ra ar gwiad analus anezhañ ul lodenn ret en ho tilhad.",
   },
   images: [
     "/images/products/727593_9010_V1.png",
@@ -573,15 +577,22 @@ const product = ref({
       "Col rond renforcé",
       "Coupe classique",
       "Lavable en machine à 30°",
-      "Fabriqué en France"
+      "Fabriqué en France",
     ],
     en: [
       "100% organic cotton",
       "Reinforced crew neck",
       "Classic fit",
       "Machine washable at 30°",
-      "Made in France"
-    ]
+      "Made in France",
+    ],
+    br: [
+      "100% koton biologel",
+      "Kolier ront kreñvaet",
+      "Troc'h klasel",
+      "Gwalc'hus e mekanik da 30°",
+      "Graet e Breizh",
+    ],
   },
   careInstructions: {
     fr: [
@@ -589,16 +600,23 @@ const product = ref({
       "Ne pas utiliser de sèche-linge",
       "Repasser à température moyenne",
       "Ne pas nettoyer à sec",
-      "Laver avec des couleurs similaires"
+      "Laver avec des couleurs similaires",
     ],
     en: [
       "Machine wash at 30°C",
       "Do not tumble dry",
       "Iron at medium temperature",
       "Do not dry clean",
-      "Wash with similar colors"
-    ]
-  }
+      "Wash with similar colors",
+    ],
+    br: [
+      "Gwalc'hus e mekanik da 30°C",
+      "Na implijit ket sec'her-dilhad",
+      "Feriñ da dempradur etre",
+      "Na naetait ket da sec'h",
+      "Gwalc'hiñ gant livioù heñvel",
+    ],
+  },
 });
 
 onMounted(() => {

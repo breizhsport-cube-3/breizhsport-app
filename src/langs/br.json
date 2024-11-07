@@ -1,0 +1,179 @@
+{
+  "auth": {
+    "welcome": "Degemer mat",
+    "login": {
+      "title": "Kevreañ",
+      "description": "Degemer mat en-dro! Kevrait d'ho kont.",
+      "email": "Postel",
+      "password": "Ger-tremen",
+      "forgot_password": "Ger-tremen ankouaet?",
+      "sign_in": "Kevreañ",
+      "dont_have_account": "N'ho peus ket ur gont?",
+      "sign_up": "En em enskrivañ",
+      "remember_me": "Derc'hel soñj ac'hanon?",
+      "invalid_credentials": "Postel pe ger-tremen direizh",
+      "logout": "Digevreañ",
+      "my_account": "Ma c'hont",
+      "email_placeholder": "Ebarzhit ho postel",
+      "password_placeholder": "Ebarzhit ho ker-tremen",
+      "submit": "Kevreañ"
+    },
+    "or": "or",
+    "register": {
+      "title": "Enskrivadur",
+      "description": "Dizoloit sportoù Breizh hag embarkit ganeomp!",
+      "first_name": "Anv-bihan",
+      "last_name": "Anv-familh",
+      "email": "Postel",
+      "password": "Ger-tremen",
+      "password_confirmation": "Kadarnaat ar ger-tremen",
+      "sign_up": "En em enskrivañ",
+      "already_have_account": "Ur gont ho peus dija?",
+      "sign_in": "Kevreañ"
+    },
+    "forgot_password": {
+      "title": "Ger-tremen ankouaet?",
+      "description": "Lakait ho postel evit nevesaat ho ker-tremen",
+      "email": "Postel",
+      "reset_password": "Nevesaat ar ger-tremen",
+      "remember_password": "Deut soñj deoc'h eus ho ker-tremen?",
+      "sign_in": "Kevreañ"
+    }
+  },
+  "shop": {
+    "navigation": {
+      "products": "Produioù",
+      "cart": "Paner"
+    },
+    "search": {
+      "placeholder": "Klask ur produ...",
+      "no_results": "Disoc'h ebet kavet evit \"{query}\"",
+      "reset": "Adderaouekaat ar c'hlask"
+    },
+    "filters": {
+      "categories": "Rummadoù",
+      "price": "Priz",
+      "price_range": "Priz: {min}€ - {max}€",
+      "search_label": "Klask: {query}"
+    },
+    "product": {
+      "add_to_cart": "Ouzhpennañ d'ar baner",
+      "buy_now": "Prenañ bremañ",
+      "size": "Ment",
+      "quantity": "Kementad",
+      "description": {
+        "title": "Deskrivadur",
+        "features": "Perzhioù",
+        "care": "Entreteniñ"
+      },
+      "features": "Perzhioù",
+      "delivery": "Kas",
+      "delivery_info": {
+        "free": "Kas digoust e Bro-C'hall",
+        "estimate": "Pad kas rakwelet : 2-4 devezh labour"
+      },
+      "color": {
+        "title": "Liv",
+        "variants": {
+          "black": "Du",
+          "white": "Gwenn",
+          "blue": "Glas",
+          "red": "Ruz",
+          "green": "Gwer"
+        }
+      },
+      "model": {
+        "title": "Skouer",
+        "standard": "Standard",
+        "premium": "Premium",
+        "pro": "Micherel"
+      },
+      "reviews": "evezhiadennoù",
+      "stock": {
+        "in_stock": "E stock",
+        "out_of_stock": "Er-maez a stock"
+      },
+      "size_guide": "Sturlevr mentoù",
+      "size_guide_table": {
+        "size": "Ment",
+        "chest": "Tro bruched",
+        "waist": "Tro dargreiz",
+        "hips": "Tro lez"
+      },
+      "size_guide_how_to_measure": {
+        "title": "Penaos muzuliañ",
+        "chest": "Muzuliañ a-blaen en-dro d'al lodenn vrasañ eus ho pruched",
+        "waist": "Muzuliañ en-dro d'ho targreiz naturel, e live ar begel",
+        "hips": "Muzuliañ a-blaen en-dro d'al lodenn vrasañ eus ho lez"
+      },
+      "out_of_stock": "Er-maez a stock",
+      "gallery": "Palier skeudennoù"
+    },
+    "cart": {
+      "title": "Paner",
+      "empty": "Ho paner a zo goullo",
+      "subtotal": "Sammad darnel",
+      "shipping": "Kas",
+      "total": "Hollad",
+      "free": "Digoust",
+      "checkout": "Paeañ",
+      "view_cart": "Gwelet ar baner",
+      "added_to_cart": "Produ ouzhpennet d'ar baner",
+      "continue_shopping": "Kenderc'hel da breniñ",
+      "summary": "Diverradur ar gourc'hemenn",
+      "unit_price": "Priz an unanenn"
+    }
+  },
+  "checkout": {
+    "steps": {
+      "shipping": "Kas",
+      "payment": "Paeamant",
+      "confirmation": "Kadarnaat"
+    },
+    "shipping": {
+      "title": "Titouroù kas",
+      "firstName": "Anv-bihan",
+      "lastName": "Anv-familh",
+      "email": "Postel",
+      "phone": "Pellgomz",
+      "address": "Chomlec'h",
+      "city": "Kêr",
+      "postalCode": "Kod post"
+    },
+    "payment": {
+      "title": "Paeamant"
+    },
+    "confirmation": {
+      "title": "Kadarnaat"
+    },
+    "summary": {
+      "title": "Diverradur ar gourc'hemenn",
+      "quantity": "Kementad",
+      "subtotal": "Sammad darnel",
+      "shipping": "Mizoù kas",
+      "total": "Hollad"
+    },
+    "back": "Distreiñ",
+    "next": "War-lerc'h",
+    "placeOrder": "Gourc'hemenn"
+  },
+  "validation": {
+    "required": "Ar vaezienn-mañ a zo ret",
+    "email": "Lakait ur chomlec'h postel reizh mar plij",
+    "minLength": "Ar vaezienn-mañ a rank bezañ {min} arouezenn d'an nebeutañ"
+  },
+  "footer": {
+    "about_text": "Ho pal evit aveadurioù sport e Breizh. Kalite, hengoun ha neveziñ evit an holl sportourien.",
+    "quick_links": "Liammoù prim",
+    "home": "Degemer",
+    "products": "Produioù",
+    "about": "Diwar-benn",
+    "contact": "Darempred",
+    "categories": "Rummadoù",
+    "contact_us": "Kit e darempred ganeomp"
+  },
+  "common": {
+    "back": "Distreiñ"
+  },
+  "or": "pe"
+}

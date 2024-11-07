@@ -1,5 +1,6 @@
 {
   "auth": {
+    "welcome": "Welcome",
     "login": {
       "title": "Login",
       "description": "Welcome back! Sign in to your account.",
@@ -10,8 +11,14 @@
       "dont_have_account": "Don't have an account? Sign up.",
       "sign_up": "Sign up",
       "remember_me": "Remember me?",
-      "invalid_credentials": "Invalid email or password."
+      "invalid_credentials": "Invalid email or password.",
+      "logout": "Logout",
+      "my_account": "My Account",
+      "email_placeholder": "Enter your email",
+      "password_placeholder": "Enter your password",
+      "submit": "Sign in"
     },
+    "or": "or",
     "register": {
       "title": "Register",
       "description": "Discover Breton sports and embark on an adventure with us!",
@@ -163,5 +170,9 @@
     "categories": "Categories",
     "contact_us": "Contact us",
     "rights": "All rights reserved."
-  }
+  },
+  "common": {
+    "back": "Back"
+  },
+  "or": "or"
 }

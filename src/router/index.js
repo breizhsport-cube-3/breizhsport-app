@@ -5,9 +5,6 @@ import Products from "../views/Products.vue";
 import Product from "../views/Product.vue";
 import Cart from "../views/Cart.vue";
 import Checkout from "../views/Checkout.vue";
-import Login from "../views/Login.vue";
-import Register from "../views/Register.vue";
-import ForgotPassword from "../views/ForgotPassword.vue";
 
 const routes = [
   {
@@ -34,21 +31,6 @@ const routes = [
     path: "/checkout",
     name: "checkout",
     component: Checkout,
-  },
-  {
-    path: "/login",
-    name: "login",
-    component: Login,
-  },
-  {
-    path: "/register",
-    name: "register",
-    component: Register,
-  },
-  {
-    path: "/forgot-password",
-    name: "forgot-password",
-    component: ForgotPassword,
   },
   {
     path: "/:pathMatch(.*)*",
