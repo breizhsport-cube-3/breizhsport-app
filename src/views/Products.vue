@@ -19,7 +19,9 @@
             class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
             @click="clearSearch"
           >
-            <i class="pi pi-times text-lg text-gray-400 hover:text-gray-600"></i>
+            <i
+              class="pi pi-times text-lg text-gray-400 hover:text-gray-600"
+            ></i>
           </span>
         </div>
 
@@ -45,7 +47,7 @@
         <!-- Filters Sidebar -->
         <div class="md:w-64 flex-shrink-0 space-y-6">
           <div>
-            <h3 class="text-lg font-medium">{{ $t('products.categories') }}</h3>
+            <h3 class="text-lg font-medium">{{ $t("products.categories") }}</h3>
             <div class="mt-2 space-y-2">
               <div
                 v-for="category in categories"
@@ -68,7 +70,7 @@
           </div>
 
           <div>
-            <h3 class="text-lg font-medium">{{ $t('products.price') }}</h3>
+            <h3 class="text-lg font-medium">{{ $t("products.price") }}</h3>
             <div class="mt-2">
               <Slider
                 v-model="priceRange"
@@ -94,7 +96,7 @@
           >
             <i class="pi pi-search text-4xl text-gray-300"></i>
             <p class="mt-4 text-gray-500">
-              {{ $t('products.no_results') }} "{{ searchQuery }}"
+              {{ $t("products.no_results") }} "{{ searchQuery }}"
             </p>
             <Button
               :label="$t('products.reset_search')"
@@ -115,7 +117,6 @@
               @showLogin="userOP.toggle($event)"
             />
           </div>
-          
         </div>
       </div>
     </div>
@@ -134,8 +135,8 @@ import debounce from "lodash/debounce";
 import ProductCard from "../components/ProductCard.vue";
 import IconField from "primevue/iconfield";
 import InputIcon from "primevue/inputicon";
-import categoriesData from '../data/categories.json';
-import { useRoute } from 'vue-router';
+import categoriesData from "../data/categories.json";
+import { useRoute } from "vue-router";
 
 const productsStore = useProductsStore();
 const { locale } = useI18n();
@@ -145,7 +146,6 @@ const searchQuery = ref("");
 const userOP = ref();
 
 const route = useRoute();
-
 
 onMounted(() => {
   productsStore.loadProducts();
@@ -196,7 +196,9 @@ const filteredProducts = computed(() => {
   return productsStore.getAllProducts.filter((product) => {
     const matchesSearch =
       searchQuery.value === "" ||
-      product.name[locale.value].toLowerCase().includes(searchQuery.value.toLowerCase()) ||
+      product.name[locale.value]
+        .toLowerCase()
+        .includes(searchQuery.value.toLowerCase()) ||
       product.description[locale.value]
         .toLowerCase()
         .includes(searchQuery.value.toLowerCase());
@@ -222,7 +224,7 @@ const removeFilter = (filter) => {
     case "category":
       const catId = parseInt(filter.id.split("-")[1]);
       selectedCategories.value = selectedCategories.value.filter(
-        (id) => id !== catId
+        (id) => id !== catId,
       );
       break;
     case "price":
@@ -241,8 +243,7 @@ const resetSearch = () => {
   priceRange.value = [0, 200];
 };
 
-const performSearch = () => {
-};
+const performSearch = () => {};
 
 // Mock data
 const categories = ref(categoriesData.categories);
@@ -264,7 +265,7 @@ watch(
     } else {
       selectedCategories.value = [];
     }
-  }
+  },
 );
 </script>
 

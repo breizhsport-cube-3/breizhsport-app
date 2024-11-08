@@ -238,11 +238,14 @@
       </div>
     </div>
   </nav>
-    <div v-if="showPromotion" class="py-1 bg-primary-200/20 border-y border-primary-600 ">
-      <Vue3Marquee>
-        <span class="text-primary-600">{{ $t('promotions.black_friday') }}</span>
-      </Vue3Marquee>
-    </div>
+  <div
+    v-if="showPromotion"
+    class="py-1 bg-primary-200/20 border-y border-primary-600"
+  >
+    <Vue3Marquee>
+      <span class="text-primary-600">{{ $t("promotions.black_friday") }}</span>
+    </Vue3Marquee>
+  </div>
 </template>
 
 <script setup>
@@ -260,7 +263,7 @@ import { useRouter } from "vue-router";
 import { useAuthStore } from "../stores/auth";
 import InputText from "primevue/inputtext";
 import Password from "primevue/password";
-import { Vue3Marquee } from 'vue3-marquee'
+import { Vue3Marquee } from "vue3-marquee";
 
 const cartStore = useCartStore();
 const { locale } = useI18n();
@@ -314,5 +317,5 @@ const handleLogin = async () => {
 
 const showLoginForm = ref(false);
 
-const showPromotion = computed(() => import.meta.env.VITE_PROMOTION_DAYS)
+const showPromotion = computed(() => import.meta.env.VITE_PROMOTION_DAYS);
 </script>

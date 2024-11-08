@@ -31,7 +31,9 @@
               <div class="text-gray-600">{{ t("about.stats.years") }}</div>
             </div>
             <div class="text-center">
-              <div class="text-4xl font-fredoka text-primary-600 mb-2">5000+</div>
+              <div class="text-4xl font-fredoka text-primary-600 mb-2">
+                5000+
+              </div>
               <div class="text-gray-600">{{ t("about.stats.customers") }}</div>
             </div>
           </div>

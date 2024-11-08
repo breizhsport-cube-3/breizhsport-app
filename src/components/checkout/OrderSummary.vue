@@ -6,14 +6,20 @@
 
     <!-- Liste des produits -->
     <div v-if="cartItems.length > 0" class="space-y-4 mb-6">
-      <div v-for="item in cartItems" 
-           :key="`${item.id}-${item.size}-${item.color}`" 
-           class="flex gap-4 py-2 border-b border-gray-100 last:border-b-0">
-        <img :src="item.images[0]" 
-             :alt="item.name[currentLocale]" 
-             class="w-16 h-16 object-cover rounded-md" />
+      <div
+        v-for="item in cartItems"
+        :key="`${item.id}-${item.size}-${item.color}`"
+        class="flex gap-4 py-2 border-b border-gray-100 last:border-b-0"
+      >
+        <img
+          :src="item.images[0]"
+          :alt="item.name[currentLocale]"
+          class="w-16 h-16 object-cover rounded-md"
+        />
         <div class="flex-1">
-          <h3 class="font-medium text-sm truncate">{{ item.name[currentLocale] }}</h3>
+          <h3 class="font-medium text-sm truncate">
+            {{ item.name[currentLocale] }}
+          </h3>
           <div class="text-xs text-gray-600 space-y-1">
             <div v-if="item.size" class="flex items-center gap-2">
               <span>{{ t("shop.product.size") }}:</span>
@@ -22,15 +28,18 @@
             <div v-if="item.color" class="flex items-center gap-2">
               <span>{{ t("shop.product.color.title") }}:</span>
               <div class="flex items-center gap-1">
-                <span 
+                <span
                   class="w-3 h-3 rounded-full inline-block"
                   :style="{ backgroundColor: item.colorData.value }"
                 ></span>
-                <span class="font-medium">{{ item.colorData.name[currentLocale] }}</span>
+                <span class="font-medium">{{
+                  item.colorData.name[currentLocale]
+                }}</span>
               </div>
             </div>
             <div class="text-gray-500">
-              {{ t("shop.cart.unit_price") }}: {{ item.price }}€ × {{ item.quantity }}
+              {{ t("shop.cart.unit_price") }}: {{ item.price }}€ ×
+              {{ item.quantity }}
             </div>
           </div>
         </div>
@@ -65,8 +74,8 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
-import { useI18n } from 'vue-i18n';
+import { computed } from "vue";
+import { useI18n } from "vue-i18n";
 
 const { t, locale } = useI18n();
 const currentLocale = computed(() => locale.value);
@@ -74,16 +83,16 @@ const currentLocale = computed(() => locale.value);
 const props = defineProps({
   selectedShippingMethod: {
     type: Object,
-    default: null
+    default: null,
   },
   cartItems: {
     type: Array,
-    required: true
+    required: true,
   },
   cartTotal: {
     type: Number,
-    required: true
-  }
+    required: true,
+  },
 });
 
 const totalWithShipping = computed(() => {

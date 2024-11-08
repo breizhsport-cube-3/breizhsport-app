@@ -88,17 +88,22 @@ import { useI18n } from "vue-i18n";
 import Carousel from "primevue/carousel";
 import { useProductsStore } from "../stores/products";
 import ProductCard from "../components/ProductCard.vue";
-import categoriesData from '../data/categories.json';
-import { useRouter } from 'vue-router';
+import categoriesData from "../data/categories.json";
+import { useRouter } from "vue-router";
 
 const { t } = useI18n();
 const productsStore = useProductsStore();
 const userOP = ref();
 
-const categories = ref(categoriesData.categories.map(category => ({
-  ...category,
-  image: new URL(`../assets/images/home/categories/${category.image}`, import.meta.url).href
-})));
+const categories = ref(
+  categoriesData.categories.map((category) => ({
+    ...category,
+    image: new URL(
+      `../assets/images/home/categories/${category.image}`,
+      import.meta.url,
+    ).href,
+  })),
+);
 
 const carouselImages = ref([]);
 const imageModules = import.meta.glob(
@@ -128,8 +133,8 @@ const router = useRouter();
 
 const navigateToProducts = (categoryId: number) => {
   router.push({
-    path: '/products',
-    query: { category: categoryId.toString() }
+    path: "/products",
+    query: { category: categoryId.toString() },
   });
 };
 

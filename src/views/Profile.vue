@@ -71,6 +71,5 @@ const user = ref<User>({
   following: 420,
 });
 
-const editProfile = () => {
-};
+const editProfile = () => {};
 </script>

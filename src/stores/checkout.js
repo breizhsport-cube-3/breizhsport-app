@@ -1,18 +1,18 @@
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 
-export const useCheckoutStore = defineStore('checkout', {
+export const useCheckoutStore = defineStore("checkout", {
   state: () => ({
     shippingForm: {},
-    selectedShippingMethod: null
+    selectedShippingMethod: null,
   }),
 
   actions: {
     setShippingMethod(method) {
       this.selectedShippingMethod = method;
     },
-    
+
     setShippingForm(form) {
       this.shippingForm = form;
-    }
-  }
+    },
+  },
 });

@@ -13,11 +13,7 @@
             "min": 2,
             "max": 3
           },
-          "features": [
-            "tracking",
-            "signature",
-            "insurance"
-          ]
+          "features": ["tracking", "signature", "insurance"]
         },
         {
           "id": "colissimo_relay",
@@ -28,11 +24,7 @@
             "min": 2,
             "max": 3
           },
-          "features": [
-            "tracking",
-            "relay_point",
-            "insurance"
-          ]
+          "features": ["tracking", "relay_point", "insurance"]
         }
       ]
     },
@@ -49,12 +41,7 @@
             "min": 1,
             "max": 1
           },
-          "features": [
-            "tracking",
-            "signature",
-            "insurance",
-            "express"
-          ]
+          "features": ["tracking", "signature", "insurance", "express"]
         },
         {
           "id": "chronopost_relay",
@@ -65,12 +52,7 @@
             "min": 1,
             "max": 1
           },
-          "features": [
-            "tracking",
-            "relay_point",
-            "insurance",
-            "express"
-          ]
+          "features": ["tracking", "relay_point", "insurance", "express"]
         }
       ]
     },
@@ -87,27 +69,18 @@
             "min": 1,
             "max": 2
           },
-          "features": [
-            "tracking",
-            "signature",
-            "insurance",
-            "time_window"
-          ]
+          "features": ["tracking", "signature", "insurance", "time_window"]
         },
         {
           "id": "dpd_relay",
           "name": "DPD Relais",
           "description": "Livraison en point relais",
-          "price": 4.50,
+          "price": 4.5,
           "estimatedDays": {
             "min": 2,
             "max": 3
           },
-          "features": [
-            "tracking",
-            "relay_point",
-            "insurance"
-          ]
+          "features": ["tracking", "relay_point", "insurance"]
         }
       ]
     },
@@ -124,11 +97,7 @@
             "min": 2,
             "max": 3
           },
-          "features": [
-            "tracking",
-            "signature",
-            "insurance"
-          ]
+          "features": ["tracking", "signature", "insurance"]
         },
         {
           "id": "ups_express",
@@ -139,12 +108,7 @@
             "min": 1,
             "max": 1
           },
-          "features": [
-            "tracking",
-            "signature",
-            "insurance",
-            "express"
-          ]
+          "features": ["tracking", "signature", "insurance", "express"]
         }
       ]
     },
@@ -156,16 +120,12 @@
           "id": "mr_standard",
           "name": "Point Relais",
           "description": "Livraison en point relais",
-          "price": 3.50,
+          "price": 3.5,
           "estimatedDays": {
             "min": 3,
             "max": 4
           },
-          "features": [
-            "tracking",
-            "relay_point",
-            "insurance"
-          ]
+          "features": ["tracking", "relay_point", "insurance"]
         }
       ]
     }
@@ -223,4 +183,4 @@
   "free_shipping_threshold": 49,
   "default_carrier": "colissimo",
   "available_countries": ["FR", "BE", "LU", "DE", "CH"]
-} 
+}

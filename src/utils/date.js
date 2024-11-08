@@ -4,11 +4,11 @@
  * @param {string} locale - La locale à utiliser (fr-FR, en-US, etc.)
  * @returns {string} La date formatée
  */
-export const formatDate = (date, locale = 'fr-FR') => {
+export const formatDate = (date, locale = "fr-FR") => {
   return new Intl.DateTimeFormat(locale, {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   }).format(date);
 };
 
@@ -20,14 +20,14 @@ export const formatDate = (date, locale = 'fr-FR') => {
 export const addBusinessDays = (businessDays) => {
   const date = new Date();
   let count = 0;
-  
+
   while (count < businessDays) {
     date.setDate(date.getDate() + 1);
     if (date.getDay() !== 0 && date.getDay() !== 6) {
       count++;
     }
   }
-  
+
   return date;
 };
 
@@ -37,10 +37,10 @@ export const addBusinessDays = (businessDays) => {
  * @param {string} locale - La locale à utiliser
  * @returns {string} La plage de dates formatée
  */
-export const formatDeliveryEstimate = (estimatedDays, locale = 'fr-FR') => {
+export const formatDeliveryEstimate = (estimatedDays, locale = "fr-FR") => {
   const minDate = addBusinessDays(estimatedDays.min);
   const maxDate = addBusinessDays(estimatedDays.max);
-  
+
   return `${formatDate(minDate, locale)} - ${formatDate(maxDate, locale)}`;
 };
 
@@ -62,10 +62,10 @@ export const isBusinessDay = (date) => {
 export const getNextBusinessDay = (date = new Date()) => {
   const nextDay = new Date(date);
   nextDay.setDate(nextDay.getDate() + 1);
-  
+
   while (!isBusinessDay(nextDay)) {
     nextDay.setDate(nextDay.getDate() + 1);
   }
-  
+
   return nextDay;
 };

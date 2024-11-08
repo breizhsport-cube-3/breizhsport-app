@@ -74,7 +74,10 @@ const props = defineProps({
 
 const discountPercentage = computed(() => {
   if (!props.product.oldPrice) return 0;
-  return Math.round(((props.product.oldPrice - props.product.price) / props.product.oldPrice) * 100);
+  return Math.round(
+    ((props.product.oldPrice - props.product.price) / props.product.oldPrice) *
+      100,
+  );
 });
 
 defineEmits(["showLogin"]);

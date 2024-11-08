@@ -36,7 +36,9 @@
               <div class="flex-grow">
                 <div class="flex justify-between">
                   <div>
-                    <h3 class="font-medium text-lg">{{ item.name[currentLocale] }}</h3>
+                    <h3 class="font-medium text-lg">
+                      {{ item.name[currentLocale] }}
+                    </h3>
                     <div class="text-sm text-gray-600 space-y-1 mt-2">
                       <div v-if="item.size" class="flex items-center gap-2">
                         <span>{{ t("shop.product.size") }}:</span>
@@ -45,17 +47,21 @@
                       <div v-if="item.color" class="flex items-center gap-2">
                         <span>{{ t("shop.product.color.title") }}:</span>
                         <div class="flex items-center gap-1">
-                          <span 
+                          <span
                             class="w-4 h-4 rounded-full inline-block"
                             :style="{ backgroundColor: item.colorData.value }"
                           ></span>
-                          <span class="font-medium">{{ item.colorData.name[currentLocale] }}</span>
+                          <span class="font-medium">{{
+                            item.colorData.name[currentLocale]
+                          }}</span>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="text-right">
-                    <p class="font-medium text-lg">{{ (item.price * item.quantity).toFixed(2) }}€</p>
+                    <p class="font-medium text-lg">
+                      {{ (item.price * item.quantity).toFixed(2) }}€
+                    </p>
                     <p class="text-sm text-gray-500">
                       {{ t("shop.cart.unit_price") }}: {{ item.price }}€
                     </p>
@@ -79,15 +85,15 @@
                     />
                   </div>
                   <div class="flex gap-2">
-                    <WishlistButton/>
+                    <WishlistButton />
                     <Button
-                    icon="pi pi-trash"
-                    text
-                    severity="danger"
-                    @click="cartStore.removeItem(item.id)"
-                    class="p-2"
-                  />
-                </div>
+                      icon="pi pi-trash"
+                      text
+                      severity="danger"
+                      @click="cartStore.removeItem(item.id)"
+                      class="p-2"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -153,11 +159,9 @@ const router = useRouter();
 const { t, locale } = useI18n();
 const currentLocale = computed(() => locale.value);
 
-
 const updateQuantity = (item, newQuantity) => {
   if (newQuantity > 0 && newQuantity <= 10) {
     cartStore.updateQuantity(item.id, item.size, item.color, newQuantity);
   }
 };
-
 </script>

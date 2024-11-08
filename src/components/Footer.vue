@@ -128,8 +128,8 @@
 <script setup>
 import { useI18n } from "vue-i18n";
 import Logo from "./Logo.vue";
-import categoriesData from '../data/categories.json';
-import { ref } from 'vue';
+import categoriesData from "../data/categories.json";
+import { ref } from "vue";
 
 const { t } = useI18n();
 const categories = ref(categoriesData.categories);

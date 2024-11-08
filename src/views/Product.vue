@@ -483,7 +483,7 @@ import Carousel from "primevue/carousel";
 import { useProductsStore } from "../stores/products";
 import ProductCard from "../components/ProductCard.vue";
 import OverlayPanel from "primevue/overlaypanel";
-import Toast from 'primevue/toast';
+import Toast from "primevue/toast";
 import { useToast } from "primevue/usetoast";
 
 const route = useRoute();
@@ -557,21 +557,23 @@ onMounted(() => {
 const toast = useToast();
 
 const addToCart = () => {
-  const selectedColorObject = product.value.colors.find(c => c.id === selectedColor.value);
+  const selectedColorObject = product.value.colors.find(
+    (c) => c.id === selectedColor.value,
+  );
   cartStore.addItem({
     ...product.value,
     size: selectedSize.value,
     color: selectedColor.value,
     colorData: selectedColorObject,
-    quantity: quantity.value
+    quantity: quantity.value,
   });
-  
+
   // Utiliser le toast au lieu de l'overlay panel
   toast.add({
-    severity: 'success',
-    summary: t('shop.cart.added'),
-    detail: t('shop.cart.added_detail'),
-    life: 3000
+    severity: "success",
+    summary: t("shop.cart.added"),
+    detail: t("shop.cart.added_detail"),
+    life: 3000,
   });
 };
 
@@ -639,7 +641,6 @@ const discountPercentage = computed(() => {
 });
 
 const router = useRouter();
-
 
 const productsStore = useProductsStore();
 const relatedProducts = computed(() => {

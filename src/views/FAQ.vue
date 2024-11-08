@@ -19,7 +19,9 @@
           class="bg-white rounded-lg shadow-sm p-6 cursor-pointer hover:shadow-md transition-shadow"
           @click="scrollToCategory(category)"
         >
-          <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary-100 text-primary-600 mx-auto mb-4">
+          <div
+            class="flex items-center justify-center h-12 w-12 rounded-md bg-primary-100 text-primary-600 mx-auto mb-4"
+          >
             <i :class="getCategoryIcon(category)" class="text-xl"></i>
           </div>
           <h3 class="text-lg font-medium text-gray-900 text-center">
@@ -65,7 +67,7 @@ import AccordionTab from "primevue/accordiontab";
 
 const { t } = useI18n();
 
-const categories = ['shipping', 'returns', 'products', 'payment'];
+const categories = ["shipping", "returns", "products", "payment"];
 
 const getCategoryIcon = (category) => {
   const icons = {
@@ -79,14 +81,14 @@ const getCategoryIcon = (category) => {
 
 const getQuestionKeys = (category) => {
   switch (category) {
-    case 'shipping':
-      return ['time', 'cost'];
-    case 'returns':
-      return ['policy', 'process'];
-    case 'products':
-      return ['size', 'stock'];
-    case 'payment':
-      return ['methods', 'security'];
+    case "shipping":
+      return ["time", "cost"];
+    case "returns":
+      return ["policy", "process"];
+    case "products":
+      return ["size", "stock"];
+    case "payment":
+      return ["methods", "security"];
     default:
       return [];
   }

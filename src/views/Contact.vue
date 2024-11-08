@@ -223,10 +223,10 @@ const rules = {
   lastName: { required },
   email: { required, email },
   subject: { required },
-  message: { 
-    required, 
+  message: {
+    required,
     minLength: minLength(10),
-    maxLength: maxLength(maxMessageLength) 
+    maxLength: maxLength(maxMessageLength),
   },
 };
 
