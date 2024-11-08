@@ -1,6 +1,6 @@
 <template>
   <!-- Product Details -->
-  <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+  <div v-if="product" class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <!-- Product Images -->
       <div class="space-y-4">
@@ -10,7 +10,7 @@
         >
           <img
             :src="selectedImage"
-            :alt="product.name"
+            :alt="product.name[currentLocale]"
             class="w-full h-full object-cover"
           />
           <!-- Navigation Arrows -->
@@ -189,7 +189,7 @@
                   class="w-10 h-10 rounded-full flex-shrink-0 relative"
                   :class="{ 'opacity-75 cursor-not-allowed': !color.available }"
                   :disabled="!color.available"
-                  :title="t(`shop.product.color.variants.${color.id}`)"
+                  :title="color.name[currentLocale]"
                 >
                   <span
                     class="absolute inset-0 rounded-full"
@@ -263,6 +263,7 @@
               severity="primary"
               class="flex-1 hidden sm:flex [&>.p-button-label]:hidden md:[&>.p-button-label]:hidden lg:[&>.p-button-label]:block"
               @click="addToCart"
+              :disabled="!selectedSize || !selectedColor"
             />
 
             <!-- Buy Now Button -->
@@ -272,6 +273,7 @@
               severity="success"
               class="w-full sm:flex-1 hidden sm:flex [&>.p-button-label]:hidden md:[&>.p-button-label]:hidden lg:[&>.p-button-label]:block"
               @click="buyNow"
+              :disabled="!selectedSize || !selectedColor"
             />
           </template>
 
@@ -291,24 +293,21 @@
         </div>
 
         <!-- Description Section -->
-        <div class="border-t pt-8">
-          <div class="space-y-6">
+        <div class="border-t pt-1">
+          <div class="space-y-3">
             <!-- Main Description -->
-            <div>
-              <h3 class="text-lg font-medium mb-4">
-                {{ t("shop.product.description.title") }}
-              </h3>
+            <Fieldset :legend="t('shop.product.description.title')">
               <p class="text-gray-600 leading-relaxed">
                 {{ product.description[currentLocale] }}
               </p>
-            </div>
+            </Fieldset>
 
-            <div class="flex flex-row justify-between gap-4">
+            <div class="flex flex-row gap-3">
               <!-- Features List -->
-              <div>
-                <h3 class="text-lg font-medium mb-4">
-                  {{ t("shop.product.description.features") }}
-                </h3>
+              <Fieldset
+                :legend="t('shop.product.description.features')"
+                class="flex-1"
+              >
                 <ul class="space-y-3">
                   <li
                     v-for="(feature, index) in product.features[currentLocale]"
@@ -319,13 +318,13 @@
                     <span class="text-gray-600">{{ feature }}</span>
                   </li>
                 </ul>
-              </div>
+              </Fieldset>
 
               <!-- Care Instructions -->
-              <div>
-                <h3 class="text-lg font-medium mb-4">
-                  {{ t("shop.product.description.care") }}
-                </h3>
+              <Fieldset
+                :legend="t('shop.product.description.care')"
+                class="flex-1"
+              >
                 <ul class="space-y-3">
                   <li
                     v-for="(instruction, index) in product.careInstructions[
@@ -338,12 +337,33 @@
                     <span class="text-gray-600">{{ instruction }}</span>
                   </li>
                 </ul>
-              </div>
+              </Fieldset>
             </div>
+
+            <!-- Carousel for Related Products -->
+            <Carousel
+              :value="relatedProducts"
+              :numVisible="2"
+              :numScroll="1"
+              circular
+              :responsiveOptions="responsiveOptions"
+              :autoplayInterval="3000"
+            >
+              <template #item="slotProps">
+                <ProductCard
+                  :product="slotProps.data"
+                  @showLogin="userOP.toggle($event)"
+                />
+              </template>
+            </Carousel>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div v-else>
+    <!-- Loading or Error Message -->
+    <p>Loading product details...</p>
   </div>
 
   <!-- Size Guide Dialog -->
@@ -445,6 +465,8 @@
       </div>
     </div>
   </Dialog>
+
+  <Toast />
 </template>
 
 <script setup>
@@ -453,8 +475,16 @@ import { useCartStore } from "../stores/cart";
 import Button from "primevue/button";
 import { useI18n } from "vue-i18n";
 import Dialog from "primevue/dialog";
+import Fieldset from "primevue/fieldset";
 import { useRoute } from "vue-router";
 import { useRouter } from "vue-router";
+import productsData from "../data/products.json";
+import Carousel from "primevue/carousel";
+import { useProductsStore } from "../stores/products";
+import ProductCard from "../components/ProductCard.vue";
+import OverlayPanel from "primevue/overlaypanel";
+import Toast from 'primevue/toast';
+import { useToast } from "primevue/usetoast";
 
 const route = useRoute();
 const cartStore = useCartStore();
@@ -476,6 +506,18 @@ const showColorScrollLeft = ref(false);
 const showColorScrollRight = ref(false);
 
 const showGallery = ref(false);
+
+// Fetch the product based on the route ID
+const product = ref(null);
+
+onMounted(() => {
+  const productId = parseInt(route.params.id, 10);
+  product.value = productsData.find((p) => p.id === productId);
+
+  if (product.value) {
+    selectedImage.value = product.value.images[0];
+  }
+});
 
 const displayedImages = computed(() => {
   return product.value.images.slice(0, 4);
@@ -512,129 +554,25 @@ onMounted(() => {
   window.addEventListener("resize", checkScroll);
 });
 
-// Mock product data - À remplacer par vos données réelles
-const product = ref({
-  id: route.params.id,
-  name: {
-    fr: "T-Shirt Essential Coton",
-    en: "Essential Cotton T-Shirt",
-    br: "T-Shirt Koton Diazez",
-  },
-  brand: "Jules",
-  price: 29.99,
-  oldPrice: 39.99,
-  rating: 4.8,
-  reviewCount: 256,
-  inStock: true,
-  description: {
-    fr: "Ce t-shirt essentiel est confectionné en coton biologique de première qualité, offrant un confort optimal tout au long de la journée. Sa coupe classique et polyvalente convient à toutes les morphologies, tandis que le tissu respirant en fait une pièce indispensable de votre garde-robe.",
-    en: "This essential t-shirt is made from premium organic cotton, offering optimal comfort throughout the day. Its classic and versatile cut suits all body types, while the breathable fabric makes it an essential piece in your wardrobe.",
-    br: "Ar t-shirt diazez-mañ a zo graet gant koton biologel a galite uhel, o kinnig ur c'hompez gwellañ a-hed an deiz. E droc'h klasel hag hollimplij a glot gant an holl gorfadurezh, e-pad ma ra ar gwiad analus anezhañ ul lodenn ret en ho tilhad.",
-  },
-  images: [
-    "/images/products/727593_9010_V1.png",
-    "/images/products/727593_9010_V3.png",
-    "/images/products/727593_9010_V4.png",
-    "/images/products/727593_9010_V5.png",
-    "/images/products/727593_9010_V6.png",
-  ],
-  sizes: [
-    { id: "XS", label: "XS", available: true },
-    { id: "S", label: "S", available: true },
-    { id: "M", label: "M", available: false },
-    { id: "L", label: "L", available: false },
-    { id: "XL", label: "XL", available: true },
-    { id: "2XL", label: "2XL", available: true },
-  ],
-  colors: [
-    { id: "white", value: "#FFFFFF", available: true },
-    { id: "black", value: "#000000", available: true },
-    { id: "navy", value: "#1B365D", available: false },
-    { id: "gray", value: "#808080", available: false },
-    { id: "beige", value: "#F5F5DC", available: true },
-    { id: "olive", value: "#808000", available: true },
-    { id: "burgundy", value: "#800020", available: true },
-    { id: "charcoal", value: "#36454F", available: true },
-    { id: "khaki", value: "#C3B091", available: false },
-    { id: "taupe", value: "#483C32", available: true },
-  ],
-  sizeGuideData: [
-    { size: "XS", chest: "86-91 cm", waist: "71-76 cm", hips: "86-91 cm" },
-    { size: "S", chest: "91-97 cm", waist: "76-81 cm", hips: "91-97 cm" },
-    { size: "M", chest: "97-102 cm", waist: "81-86 cm", hips: "97-102 cm" },
-    { size: "L", chest: "102-107 cm", waist: "86-91 cm", hips: "102-107 cm" },
-    { size: "XL", chest: "107-112 cm", waist: "91-97 cm", hips: "107-112 cm" },
-    {
-      size: "2XL",
-      chest: "112-117 cm",
-      waist: "97-102 cm",
-      hips: "112-117 cm",
-    },
-  ],
-  features: {
-    fr: [
-      "100% coton biologique",
-      "Col rond renforcé",
-      "Coupe classique",
-      "Lavable en machine à 30°",
-      "Fabriqué en France",
-    ],
-    en: [
-      "100% organic cotton",
-      "Reinforced crew neck",
-      "Classic fit",
-      "Machine washable at 30°",
-      "Made in France",
-    ],
-    br: [
-      "100% koton biologel",
-      "Kolier ront kreñvaet",
-      "Troc'h klasel",
-      "Gwalc'hus e mekanik da 30°",
-      "Graet e Breizh",
-    ],
-  },
-  careInstructions: {
-    fr: [
-      "Lavable en machine à 30°C",
-      "Ne pas utiliser de sèche-linge",
-      "Repasser à température moyenne",
-      "Ne pas nettoyer à sec",
-      "Laver avec des couleurs similaires",
-    ],
-    en: [
-      "Machine wash at 30°C",
-      "Do not tumble dry",
-      "Iron at medium temperature",
-      "Do not dry clean",
-      "Wash with similar colors",
-    ],
-    br: [
-      "Gwalc'hus e mekanik da 30°C",
-      "Na implijit ket sec'her-dilhad",
-      "Feriñ da dempradur etre",
-      "Na naetait ket da sec'h",
-      "Gwalc'hiñ gant livioù heñvel",
-    ],
-  },
-});
-
-onMounted(() => {
-  selectedImage.value = product.value.images[0];
-  selectedSize.value = product.value.sizes[0];
-});
+const toast = useToast();
 
 const addToCart = () => {
-  cartStore.addItem(
-    {
-      ...product.value,
-      size: selectedSize.value,
-      color: selectedColor.value,
-      model: selectedModel.value,
-    },
-    quantity.value,
-  );
-  op.value.show($event);
+  const selectedColorObject = product.value.colors.find(c => c.id === selectedColor.value);
+  cartStore.addItem({
+    ...product.value,
+    size: selectedSize.value,
+    color: selectedColor.value,
+    colorData: selectedColorObject,
+    quantity: quantity.value
+  });
+  
+  // Utiliser le toast au lieu de l'overlay panel
+  toast.add({
+    severity: 'success',
+    summary: t('shop.cart.added'),
+    detail: t('shop.cart.added_detail'),
+    life: 3000
+  });
 };
 
 const isLightColor = (color) => {
@@ -702,7 +640,28 @@ const discountPercentage = computed(() => {
 
 const router = useRouter();
 
-const op = ref();
+
+const productsStore = useProductsStore();
+const relatedProducts = computed(() => {
+  const allProducts = productsStore.getAllProducts;
+  return allProducts.slice(0, 5);
+});
+
+const viewProduct = (productId) => {
+  router.push(`/product/${productId}`);
+};
+
+onMounted(() => {
+  productsStore.loadProducts();
+});
+
+const responsiveOptions = ref([
+  {
+    breakpoint: "1245px",
+    numVisible: 1,
+    numScroll: 1,
+  },
+]);
 </script>
 <style scoped>
 /* Ajout d'animations pour les sélections */
@@ -724,5 +683,44 @@ button:active {
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+.p-carousel-item {
+  width: 100%;
+}
+
+.related-products-carousel {
+  .p-carousel-container {
+    padding: 0 1rem;
+  }
+
+  :deep(.p-carousel-items-container) {
+    margin: 0 -0.5rem;
+  }
+
+  :deep(.p-carousel-item) {
+    padding: 0 0.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .p-carousel-container {
+      padding: 0 0.5rem;
+    }
+
+    .p-button-sm {
+      width: 2rem !important;
+      height: 2rem !important;
+    }
+  }
+}
+
+/* Pour s'assurer que les boutons de navigation restent visibles */
+:deep(.p-carousel-prev),
+:deep(.p-carousel-next) {
+  margin: 0 0.5rem;
+
+  @media (max-width: 640px) {
+    margin: 0 0.25rem;
+  }
 }
 </style>

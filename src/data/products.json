@@ -1,0 +1,430 @@
+[
+  {
+    "id": 1,
+    "name": {
+      "fr": "Veste de costume confort",
+      "en": "Comfort Suit Jacket",
+      "br": "Jaket Korduroy Komfort"
+    },
+    "brand": "Jules",
+    "price": 79.99,
+    "oldPrice": 99.99,
+    "rating": 4.5,
+    "reviewCount": 150,
+    "inStock": true,
+    "description": {
+      "fr": "Une veste de costume élégante et confortable en velours côtelé, parfaite pour toutes les occasions.",
+      "en": "An elegant and comfortable corduroy suit jacket, perfect for all occasions.",
+      "br": "Ur jaket korduroy elegant ha komfortus, parfet evit an holl degouezhioù."
+    },
+    "images": [
+      "/images/products/1/1005957_11846_V1.png",
+      "/images/products/1/1005957_11846_V2.png",
+      "/images/products/1/1005957_11846_V3.png",
+      "/images/products/1/1005957_11846_V4.png"
+    ],
+    "sizes": [
+      { "id": "S", "label": "S", "available": false },
+      { "id": "M", "label": "M", "available": true },
+      { "id": "L", "label": "L", "available": true }
+    ],
+    "colors": [
+      {
+        "id": "white",
+        "value": "#FFFFFF",
+        "available": true,
+        "name": {
+          "fr": "Blanc",
+          "en": "White",
+          "br": "Gwenn"
+        }
+      },
+      {
+        "id": "black",
+        "value": "#000000",
+        "available": true,
+        "name": {
+          "fr": "Noir",
+          "en": "Black",
+          "br": "Du"
+        }
+      },
+      {
+        "id": "gray",
+        "value": "#808080",
+        "available": true,
+        "name": {
+          "fr": "Gris",
+          "en": "Gray",
+          "br": "Gris"
+        }
+      },
+      {
+        "id": "navy",
+        "value": "#000080",
+        "available": false,
+        "name": {
+          "fr": "Bleu marine",
+          "en": "Navy",
+          "br": "Glas mor"
+        }
+      },
+      {
+        "id": "beige",
+        "value": "#F5F5DC",
+        "available": false,
+        "name": {
+          "fr": "Beige",
+          "en": "Beige",
+          "br": "Beige"
+        }
+      },
+      {
+        "id": "brown",
+        "value": "#A52A2A",
+        "available": false,
+        "name": {
+          "fr": "Marron",
+          "en": "Brown",
+          "br": "Gell"
+        }
+      },
+      {
+        "id": "olive",
+        "value": "#808000",
+        "available": true,
+        "name": {
+          "fr": "Olive",
+          "en": "Olive",
+          "br": "Olivez"
+        }
+      },
+      {
+        "id": "charcoal",
+        "value": "#36454F",
+        "available": true,
+        "name": {
+          "fr": "Gris anthracite",
+          "en": "Charcoal",
+          "br": "Gris teñval"
+        }
+      }
+    ],
+    "sizeGuideData": [
+      {
+        "size": "S",
+        "chest": "91-97 cm",
+        "waist": "76-81 cm",
+        "hips": "91-97 cm"
+      },
+      {
+        "size": "M",
+        "chest": "97-102 cm",
+        "waist": "81-86 cm",
+        "hips": "97-102 cm"
+      },
+      {
+        "size": "L",
+        "chest": "102-107 cm",
+        "waist": "86-91 cm",
+        "hips": "102-107 cm"
+      }
+    ],
+    "features": {
+      "fr": ["Velours côtelé", "Coupe ajustée", "Poches intérieures"],
+      "en": ["Corduroy fabric", "Slim fit", "Inner pockets"],
+      "br": ["Gwiad korduroy", "Troc'h strizh", "Poc'hioù diabarzh"]
+    },
+    "careInstructions": {
+      "fr": [
+        "Nettoyage à sec uniquement",
+        "Ne pas repasser",
+        "Ne pas utiliser de javel"
+      ],
+      "en": ["Dry clean only", "Do not iron", "Do not bleach"],
+      "br": ["Naetaat sec'h hepken", "Na ferit ket", "Na implijit ket javel"]
+    }
+  },
+  {
+    "id": 2,
+    "name": {
+      "fr": "Jean straight",
+      "en": "Straight Jeans",
+      "br": "Jeans Strizh"
+    },
+    "brand": "Levi's",
+    "price": 59.99,
+    "oldPrice": 79.99,
+    "rating": 4.7,
+    "reviewCount": 200,
+    "inStock": true,
+    "description": {
+      "fr": "Un jean classique à coupe droite, idéal pour un look décontracté.",
+      "en": "Classic straight-cut jeans, ideal for a casual look.",
+      "br": "Jeans strizh klasel, parfet evit ur sell disoursi."
+    },
+    "images": [
+      "/images/products/2/1005515_9970_V1.png",
+      "/images/products/2/1005515_9970_V2.png",
+      "/images/products/2/1005515_9970_V3.png"
+    ],
+    "sizes": [
+      { "id": "30", "label": "30", "available": true },
+      { "id": "32", "label": "32", "available": false },
+      { "id": "34", "label": "34", "available": true }
+    ],
+    "colors": [
+      {
+        "id": "navy",
+        "value": "#000080",
+        "available": true,
+        "name": {
+          "fr": "Bleu marine",
+          "en": "Navy",
+          "br": "Glas mor"
+        }
+      },
+      {
+        "id": "charcoal",
+        "value": "#36454F",
+        "available": false,
+        "name": {
+          "fr": "Gris anthracite",
+          "en": "Charcoal",
+          "br": "Gris teñval"
+        }
+      }
+    ],
+    "sizeGuideData": [
+      { "size": "30", "waist": "76 cm", "hips": "96 cm" },
+      { "size": "32", "waist": "81 cm", "hips": "101 cm" },
+      { "size": "34", "waist": "86 cm", "hips": "106 cm" }
+    ],
+    "features": {
+      "fr": ["Denim de haute qualité", "Coupe droite", "Cinq poches"],
+      "en": ["High-quality denim", "Straight cut", "Five pockets"],
+      "br": ["Denim a galite uhel", "Troc'h strizh", "Pemp poc'h"]
+    },
+    "careInstructions": {
+      "fr": [
+        "Laver à l'envers",
+        "Ne pas utiliser de javel",
+        "Repasser à basse température"
+      ],
+      "en": ["Wash inside out", "Do not bleach", "Iron at low temperature"],
+      "br": [
+        "Gwalc'hiñ a-dreñv",
+        "Na implijit ket javel",
+        "Feriñ da dempradur izel"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "name": {
+      "fr": "Echarpe touché doux",
+      "en": "Soft Touch Scarf",
+      "br": "Skouarnadenn Touché Doux"
+    },
+    "brand": "H&M",
+    "price": 19.99,
+    "oldPrice": 29.99,
+    "rating": 4.9,
+    "reviewCount": 300,
+    "inStock": true,
+    "description": {
+      "fr": "Une écharpe douce et confortable, parfaite pour les journées froides.",
+      "en": "A soft and comfortable scarf, perfect for cold days.",
+      "br": "Ur skouarnadenn dous ha komfortus, parfet evit an deizioù yen."
+    },
+    "images": [
+      "/images/products/3/1006065_11102_V1.png",
+      "/images/products/3/1006065_11102_V2.png"
+    ],
+    "sizes": [{ "id": "one-size", "label": "OS", "available": true }],
+    "colors": [
+      {
+        "id": "red",
+        "value": "#D32F2F",
+        "available": true,
+        "name": {
+          "fr": "Rouge",
+          "en": "Red",
+          "br": "Ruz"
+        }
+      },
+      {
+        "id": "green",
+        "value": "#388E3C",
+        "available": false,
+        "name": {
+          "fr": "Vert",
+          "en": "Green",
+          "br": "Gwer"
+        }
+      }
+    ],
+    "sizeGuideData": [],
+    "features": {
+      "fr": ["Tissu doux", "Léger", "Facile à porter"],
+      "en": ["Soft fabric", "Lightweight", "Easy to wear"],
+      "br": ["Gwiad dous", "Skornet", "Aes da wiskañ"]
+    },
+    "careInstructions": {
+      "fr": ["Lavage à la main", "Ne pas utiliser de javel", "Sécher à plat"],
+      "en": ["Hand wash", "Do not bleach", "Dry flat"],
+      "br": [
+        "Gwalc'hiñ dre zorn",
+        "Na implijit ket javel",
+        "Sec'hañ war ur plad"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "name": {
+      "fr": "T-Shirt Essential Coton",
+      "en": "Essential Cotton T-Shirt",
+      "br": "T-Shirt Koton Diazez"
+    },
+    "brand": "Jules",
+    "price": 29.99,
+    "oldPrice": 39.99,
+    "rating": 4.8,
+    "reviewCount": 256,
+    "inStock": true,
+    "description": {
+      "fr": "Ce t-shirt essentiel est confectionné en coton biologique de première qualité, offrant un confort optimal tout au long de la journée. Sa coupe classique et polyvalente convient à toutes les morphologies, tandis que le tissu est doux et respirant, assurant une sensation de confort et de liberté de mouvement.",
+      "en": "This essential cotton t-shirt is made from high-quality organic cotton, offering optimal comfort throughout the day. Its classic cut and versatility fit all body types, while the soft and breathable fabric ensures a comfortable and liberating feel.",
+      "br": "Ur t-shirt koton diazez a etrefañ en koton biologik a galite uhel, a ra an holl degouezhioù. Sa coupe klasel ha polyvalenta a etrefañ an holl morphologies, ha la kornet a galite uhel ha a wiskadenn a wiskadenn, a ra an holl degouezhioù."
+    },
+    "images": [
+      "/images/products/4/727593_9010_V1.png",
+      "/images/products/4/727593_9010_V2.png",
+      "/images/products/4/727593_9010_V3.png",
+      "/images/products/4/727593_9010_V4.png",
+      "/images/products/4/727593_9010_V5.png"
+    ],
+    "sizes": [
+      { "id": "S", "label": "S", "available": true },
+      { "id": "M", "label": "M", "available": true },
+      { "id": "L", "label": "L", "available": true }
+    ],
+    "colors": [
+      {
+        "id": "white",
+        "value": "#FFFFFF",
+        "available": true,
+        "name": {
+          "fr": "Blanc",
+          "en": "White",
+          "br": "Gwenn"
+        }
+      },
+      {
+        "id": "black",
+        "value": "#000000",
+        "available": true,
+        "name": {
+          "fr": "Noir",
+          "en": "Black",
+          "br": "Du"
+        }
+      },
+      {
+        "id": "gray",
+        "value": "#808080",
+        "available": true,
+        "name": {
+          "fr": "Gris",
+          "en": "Gray",
+          "br": "Gris"
+        }
+      },
+      {
+        "id": "navy",
+        "value": "#000080",
+        "available": false,
+        "name": {
+          "fr": "Bleu marine",
+          "en": "Navy",
+          "br": "Glas mor"
+        }
+      },
+      {
+        "id": "beige",
+        "value": "#F5F5DC",
+        "available": false,
+        "name": {
+          "fr": "Beige",
+          "en": "Beige",
+          "br": "Beige"
+        }
+      },
+      {
+        "id": "brown",
+        "value": "#A52A2A",
+        "available": false,
+        "name": {
+          "fr": "Marron",
+          "en": "Brown",
+          "br": "Gell"
+        }
+      },
+      {
+        "id": "olive",
+        "value": "#808000",
+        "available": true,
+        "name": {
+          "fr": "Olive",
+          "en": "Olive",
+          "br": "Olivez"
+        }
+      },
+      {
+        "id": "charcoal",
+        "value": "#36454F",
+        "available": true,
+        "name": {
+          "fr": "Gris anthracite",
+          "en": "Charcoal",
+          "br": "Gris teñval"
+        }
+      }
+    ],
+    "sizeGuideData": [
+      {
+        "size": "S",
+        "chest": "91-97 cm",
+        "waist": "76-81 cm",
+        "hips": "91-97 cm"
+      },
+      {
+        "size": "M",
+        "chest": "97-102 cm",
+        "waist": "81-86 cm",
+        "hips": "97-102 cm"
+      },
+      {
+        "size": "L",
+        "chest": "102-107 cm",
+        "waist": "86-91 cm",
+        "hips": "102-107 cm"
+      }
+    ],
+    "features": {
+      "fr": ["Coton biologique", "Coupe classique", "Polyvalence"],
+      "en": ["Organic cotton", "Classic cut", "Versatility"],
+      "br": ["Koton biologik", "Coupe klasel", "Polyvalence"]
+    },
+    "careInstructions": {
+      "fr": ["Lavage à la main", "Ne pas utiliser de javel", "Sécher à plat"],
+      "en": ["Hand wash", "Do not bleach", "Dry flat"],
+      "br": [
+        "Gwalc'hiñ dre zorn",
+        "Na implijit ket javel",
+        "Sec'hañ war ur plad"
+      ]
+    }
+  }
+]

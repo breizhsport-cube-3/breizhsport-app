@@ -72,6 +72,5 @@ const user = ref<User>({
 });
 
 const editProfile = () => {
-  console.log("Edit profile clicked");
 };
 </script>

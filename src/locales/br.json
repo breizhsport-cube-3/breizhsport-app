@@ -1,0 +1,367 @@
+{
+  "promotions": {
+    "black_friday": "🔥 BLACK FRIDAY: -50% war an holl lec'hienn gant ar c'hod BREIZHFRIDAY50! 🛍️"
+  },
+  "auth": {
+    "welcome": "Degemer mat",
+    "login": {
+      "title": "Kevreañ",
+      "description": "Degemer mat en-dro! Kevrait d'ho kont.",
+      "email": "Postel",
+      "password": "Ger-tremen",
+      "forgot_password": "Ger-tremen ankouaet?",
+      "sign_in": "Kevreañ",
+      "dont_have_account": "N'ho peus ket ur gont?",
+      "sign_up": "En em enskrivañ",
+      "remember_me": "Derc'hel soñj ac'hanon?",
+      "invalid_credentials": "Postel pe ger-tremen direizh",
+      "logout": "Digevreañ",
+      "my_account": "Ma c'hont",
+      "email_placeholder": "Ebarzhit ho postel",
+      "password_placeholder": "Ebarzhit ho ker-tremen",
+      "submit": "Kevreañ"
+    },
+    "or": "or",
+    "register": {
+      "title": "Enskrivadur",
+      "description": "Dizoloit sportoù Breizh hag embarkit ganeomp!",
+      "first_name": "Anv-bihan",
+      "last_name": "Anv-familh",
+      "email": "Postel",
+      "password": "Ger-tremen",
+      "password_confirmation": "Kadarnaat ar ger-tremen",
+      "sign_up": "En em enskrivañ",
+      "already_have_account": "Ur gont ho peus dija?",
+      "sign_in": "Kevreañ"
+    },
+    "forgot_password": {
+      "title": "Ger-tremen ankouaet?",
+      "description": "Lakait ho postel evit nevesaat ho ker-tremen",
+      "email": "Postel",
+      "reset_password": "Nevesaat ar ger-tremen",
+      "remember_password": "Deut soñj deoc'h eus ho ker-tremen?",
+      "sign_in": "Kevreañ"
+    }
+  },
+  "shop": {
+    "navigation": {
+      "products": "Produioù",
+      "cart": "Paner"
+    },
+    "search": {
+      "placeholder": "Klask ur produ...",
+      "no_results": "Disoc'h ebet kavet evit \"{query}\"",
+      "reset": "Adderaouekaat ar c'hlask"
+    },
+    "filters": {
+      "categories": "Rummadoù",
+      "price": "Priz",
+      "price_range": "Priz: {min}€ - {max}€",
+      "search_label": "Klask: {query}"
+    },
+    "product": {
+      "add_to_cart": "Ouzhpennañ d'ar baner",
+      "buy_now": "Prenañ bremañ",
+      "size": "Ment",
+      "quantity": "Kementad",
+      "description": {
+        "title": "Deskrivadur",
+        "features": "Perzhioù",
+        "care": "Entreteniñ"
+      },
+      "features": "Perzhioù",
+      "delivery": "Kas",
+      "delivery_info": {
+        "free": "Kas digoust e Bro-C'hall",
+        "estimate": "Pad kas rakwelet : 2-4 devezh labour"
+      },
+      "model": {
+        "title": "Skouer",
+        "standard": "Standard",
+        "premium": "Premium",
+        "pro": "Micherel"
+      },
+      "reviews": "evezhiadennoù",
+      "stock": {
+        "in_stock": "E stock",
+        "out_of_stock": "Er-maez a stock"
+      },
+      "size_guide": "Sturlevr mentoù",
+      "size_guide_table": {
+        "size": "Ment",
+        "chest": "Tro bruched",
+        "waist": "Tro dargreiz",
+        "hips": "Tro lez"
+      },
+      "size_guide_how_to_measure": {
+        "title": "Penaos muzuliañ",
+        "chest": "Muzuliañ a-blaen en-dro d'al lodenn vrasañ eus ho pruched",
+        "waist": "Muzuliañ en-dro d'ho targreiz naturel, e live ar begel",
+        "hips": "Muzuliañ a-blaen en-dro d'al lodenn vrasañ eus ho lez"
+      },
+      "out_of_stock": "Er-maez a stock",
+      "gallery": "Palier skeudennoù",
+      "color": {
+        "title": "Liv"
+      }
+    },
+    "cart": {
+      "title": "Paner",
+      "empty": "Ho paner a zo goullo",
+      "subtotal": "Sammad darnel",
+      "shipping": "Mizoù kas",
+      "total": "Hollad",
+      "free": "Jedet er paz da-heul",
+      "checkout": "Paeañ",
+      "view_cart": "Gwelet ar baner",
+      "added_to_cart": "Produ ouzhpennet d'ar baner",
+      "continue_shopping": "Kenderc'hel da breniñ",
+      "summary": "Diverradur ar gourc'hemenn",
+      "unit_price": "Priz an unanenn",
+      "updated": "Baner a zizounet",
+      "added": "Produ ouzhpennet",
+      "added_detail": "Ar produ a zo bet ouzhpennet d'ho paner"
+    }
+  },
+  "checkout": {
+    "title": "Paeamant",
+    "steps": {
+      "address": "Chomlec'h",
+      "shipping": "Kas",
+      "payment": "Paeamant",
+      "confirmation": "Kadarnaat"
+    },
+    "address": {
+      "title": "Chomlec'h kas",
+      "first_name": "Anv-bihan",
+      "first_name_placeholder": "Ho anv-bihan",
+      "last_name": "Anv-familh",
+      "last_name_placeholder": "Ho anv-familh",
+      "email": "Postel",
+      "email_placeholder": "ho@postel.bzh",
+      "phone": "Pellgomz",
+      "phone_placeholder": "Ho niverenn bellgomz",
+      "address": "Chomlec'h",
+      "address_placeholder": "Ho chomlec'h",
+      "city": "Kêr",
+      "city_placeholder": "Ho kêr",
+      "postal_code": "Kod post",
+      "postal_code_placeholder": "Ho kod post",
+      "country": "Bro",
+      "country_placeholder": "Ho pro"
+    },
+    "shipping": {
+      "title": "Chomlec'h kas",
+      "firstName": "Anv-bihan",
+      "lastName": "Anv-familh",
+      "email": "Postel",
+      "phone": "Pellgomz",
+      "address": "Chomlec'h",
+      "city": "Kêr",
+      "postalCode": "Kod post",
+      "country": "Bro",
+      "method": {
+        "title": "Doare kas"
+      },
+      "delivery_time_single": "Kas e {days} deiz",
+      "delivery_time_range": "Kas etre {min} ha {max} deiz"
+    },
+    "payment": {
+      "title": "Paeamant",
+      "secure_payment": "Paeamant diarvar",
+      "errors": {
+        "invalid_number": "Niverenn gartenn direizh",
+        "invalid_expiry": "Deiziad termen direizh",
+        "invalid_cvc": "Kod surentez direizh",
+        "processing_error": "Ur fazi a zo c'hoarvezet e-pad ar paeamant"
+      },
+      "pay": "Paeañ",
+      "processing": "O treiñ..."
+    },
+    "confirmation": {
+      "thank_you": "Trugarez evit ho koulenn",
+      "order_number": "Niverenn gourc'hemenn",
+      "order_details": "Munudoù ar gourc'hemenn",
+      "order_date": "Deiziad gourc'hemenn",
+      "estimated_delivery": "Kas rakwelet"
+    },
+    "summary": {
+      "title": "Diverradur",
+      "subtotal": "Sammad",
+      "shipping": "Mizoù kas",
+      "total": "Hollad",
+      "not_selected": "Ket diuzet",
+      "shipping_calculated_later": "Jedet e-pad ar paz kas"
+    },
+    "next": "Da-heul",
+    "back": "Distreiñ"
+  },
+  "validation": {
+    "required": "Ar vaezienn-mañ a zo ret",
+    "email": "Lakait ur chomlec'h postel reizh mar plij",
+    "minLength": "Ar vaezienn-mañ a rank bezañ {min} arouezenn d'an nebeutañ"
+  },
+  "footer": {
+    "about_text": "Ho pal evit aveadurioù sport e Breizh. Kalite, hengoun ha neveziñ evit an holl sportourien.",
+    "quick_links": "Liammoù prim",
+    "home": "Degemer",
+    "products": "Produioù",
+    "about": "Diwar-benn",
+    "contact": "Darempred",
+    "categories": "Rummadoù",
+    "contact_us": "Kit e darempred ganeomp",
+    "faq": "FAQ"
+  },
+  "common": {
+    "back": "Distreiñ"
+  },
+  "or": "pe",
+  "home": {
+    "hero_title": "Dizoloit ar c'hoarioù breton",
+    "hero_subtitle": "Ardremez sport a galite uhel evit ar c'hoarioù hengounel breton",
+    "shop_now": "Prenit bremañ",
+    "featured_products": "Produioù vedet"
+  },
+  "products": {
+    "search_placeholder": "Klask ur produ...",
+    "categories": "Rummadoù",
+    "price": "Priz",
+    "no_results": "N'eus bet kavet disoc'h ebet evit",
+    "reset_search": "Adderaouekaat ar c'hlask",
+    "search": "Klask"
+  },
+  "contact": {
+    "description": "Ur goulenn pe ezhomm sikour ho peus? Amañ emaomp evit ho sikour! Deuit e darempred gant hor skipailh.",
+    "form": {
+      "firstName": "Anv-bihan",
+      "lastName": "Anv-familh",
+      "email": "Postel",
+      "subject": "Danvez",
+      "message": "Kemennadenn",
+      "submit": "Kas ar gemennadenn",
+      "subjects": {
+        "general": "Goulenn hollek",
+        "support": "Skoazell teknikel",
+        "business": "Kenlabourat professional"
+      },
+      "success": {
+        "title": "Kemennadenn kaset",
+        "message": "Trugarez evit ho kemennadenn. Respontinmp deoc'h a-benn nebeut!"
+      },
+      "error": {
+        "title": "Fazi",
+        "message": "Ur fazi zo c'hoarvezet en ur gas ar gemennadenn. Klaskit en-dro mar plij."
+      },
+      "validation": {
+        "message_max_length": "Ar gemennadenn ne c'hell ket mont dreist {max} arouezenn"
+      }
+    },
+    "info": {
+      "title": "Titouroù darempred",
+      "address": {
+        "title": "Chomlec'h"
+      },
+      "phone": {
+        "title": "Pellgomz"
+      },
+      "email": {
+        "title": "Postel"
+      },
+      "hours": {
+        "title": "Eurioù digeriñ",
+        "weekdays": "Lun - Gwener: 9e00 - 18e00",
+        "weekend": "Sadorn: 10e00 - 16e00"
+      }
+    },
+    "map": {
+      "title": "Kavit ac'hanomp"
+    }
+  },
+  "about": {
+    "title": "Diwar-benn Breizhsport",
+    "subtitle": "Ho keveler fizius evit aveadurioù sport Breizh abaoe 2014",
+    "story": {
+      "title": "Hor istor",
+      "content": "Krouet e 2014, Breizhsport a zo ganet diwar ur garantez evit sportoù Breizh hag un c'hoant da wareziñ ha brudiñ hor glad sportel pinvidik. Ar pezh a oa ur stal vihan lec'hel zo deuet da vezañ ar pourchaser pennañ a aveadurioù sport hengounel e Breizh."
+    },
+    "stats": {
+      "years": "Bloavezhioù skiant-prenet",
+      "customers": "Pratikoù laouen"
+    },
+    "values": {
+      "title": "Hon talvoudoù",
+      "quality": {
+        "title": "Kalite",
+        "description": "Dibab ha pourchas a reomp aveadurioù sport a galite uhel hepken."
+      },
+      "tradition": {
+        "title": "Hengoun",
+        "description": "Gwareziñ ha brudiñ glad sportel Breizh."
+      },
+      "community": {
+        "title": "Kumuniezh",
+        "description": "Sevel darempredoù kreñv gant ar c'humuniezhioù sport lec'hel."
+      }
+    },
+    "team": {
+      "title": "Hor skipailh",
+      "positions": {
+        "ceo": "Krouer & Rener",
+        "marketing": "Renerez Marketing",
+        "operations": "Karget eus an obererezhioù"
+      }
+    }
+  },
+  "faq": {
+    "title": "Goulennoù Alies",
+    "subtitle": "Kavit responchoù buan d'ho koulennoù",
+    "categories": {
+      "shipping": "Kas",
+      "returns": "Distreioù",
+      "products": "Produioù",
+      "payment": "Paeamant"
+    },
+    "questions": {
+      "shipping": {
+        "time": {
+          "question": "Pegeit e pad ar chas?",
+          "answer": "Ar chas a vez graet e-pad 2-4 devezh labour e Frañs."
+        },
+        "cost": {
+          "question": "Pegement e koust ar c'has?",
+          "answer": "Ar mizoù kas a zo jedet diouzh an doare kas dibabet hag ho chomlec'h."
+        }
+      },
+      "returns": {
+        "policy": {
+          "question": "Petra eo ho politikerezh distro?",
+          "answer": "30 devezh ho peus evit distreiñ ur produ. Ar produ a rank bezañ en e stad orin."
+        },
+        "process": {
+          "question": "Penaos ober un distro?",
+          "answer": "Kit war ho kont, dibabit an urzhiad ha heuliit an diskouezadurioù evit kaout ul label distro."
+        }
+      },
+      "products": {
+        "size": {
+          "question": "Penaos dibab ar vent mat?",
+          "answer": "Sellit ouzh hor sturlevr mentoù war bajenn pep produ evit kavout ar vent a glot ar gwellañ ganeoc'h."
+        },
+        "stock": {
+          "question": "Ur produ a zo echu e stok, pegoulz e vo hegerz en-dro?",
+          "answer": "An amzer adstokañ a c'hell bezañ disheñvel hervez ar produioù. Gallout a rit lakaat hoc'h anv evit bezañ kelaouet pa vo ar produ en-dro."
+        }
+      },
+      "payment": {
+        "methods": {
+          "question": "Peseurt doareoù paeañ a vez degemeret?",
+          "answer": "Degemeret e vez kartennoù kred (Visa, Mastercard), PayPal ha transferoù bank."
+        },
+        "security": {
+          "question": "Ha sur eo ar paeamantoù?",
+          "answer": "Ya, sur eo an holl baeamantoù gant ur sifradur SSL hag e heuliomp ar standardoù surentez PCI DSS."
+        }
+      }
+    }
+  }
+} 

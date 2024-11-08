@@ -1,0 +1,226 @@
+{
+  "carriers": {
+    "colissimo": {
+      "name": "Colissimo",
+      "logo": "/images/checkout/shipping/colissimo.svg",
+      "methods": [
+        {
+          "id": "colissimo_standard",
+          "name": "Colissimo Standard",
+          "description": "Livraison à domicile",
+          "price": 4.95,
+          "estimatedDays": {
+            "min": 2,
+            "max": 3
+          },
+          "features": [
+            "tracking",
+            "signature",
+            "insurance"
+          ]
+        },
+        {
+          "id": "colissimo_relay",
+          "name": "Colissimo Point Relais",
+          "description": "Livraison en point relais",
+          "price": 3.95,
+          "estimatedDays": {
+            "min": 2,
+            "max": 3
+          },
+          "features": [
+            "tracking",
+            "relay_point",
+            "insurance"
+          ]
+        }
+      ]
+    },
+    "chronopost": {
+      "name": "Chronopost",
+      "logo": "/images/checkout/shipping/chronopost.svg",
+      "methods": [
+        {
+          "id": "chronopost_express",
+          "name": "Chronopost Express",
+          "description": "Livraison express à domicile",
+          "price": 9.99,
+          "estimatedDays": {
+            "min": 1,
+            "max": 1
+          },
+          "features": [
+            "tracking",
+            "signature",
+            "insurance",
+            "express"
+          ]
+        },
+        {
+          "id": "chronopost_relay",
+          "name": "Chrono Relais",
+          "description": "Livraison express en point relais",
+          "price": 7.99,
+          "estimatedDays": {
+            "min": 1,
+            "max": 1
+          },
+          "features": [
+            "tracking",
+            "relay_point",
+            "insurance",
+            "express"
+          ]
+        }
+      ]
+    },
+    "dpd": {
+      "name": "DPD",
+      "logo": "/images/checkout/shipping/dpd.svg",
+      "methods": [
+        {
+          "id": "dpd_predict",
+          "name": "DPD Predict",
+          "description": "Livraison à domicile avec créneau horaire",
+          "price": 5.95,
+          "estimatedDays": {
+            "min": 1,
+            "max": 2
+          },
+          "features": [
+            "tracking",
+            "signature",
+            "insurance",
+            "time_window"
+          ]
+        },
+        {
+          "id": "dpd_relay",
+          "name": "DPD Relais",
+          "description": "Livraison en point relais",
+          "price": 4.50,
+          "estimatedDays": {
+            "min": 2,
+            "max": 3
+          },
+          "features": [
+            "tracking",
+            "relay_point",
+            "insurance"
+          ]
+        }
+      ]
+    },
+    "ups": {
+      "name": "UPS",
+      "logo": "/images/checkout/shipping/ups.svg",
+      "methods": [
+        {
+          "id": "ups_standard",
+          "name": "UPS Standard",
+          "description": "Livraison à domicile",
+          "price": 6.95,
+          "estimatedDays": {
+            "min": 2,
+            "max": 3
+          },
+          "features": [
+            "tracking",
+            "signature",
+            "insurance"
+          ]
+        },
+        {
+          "id": "ups_express",
+          "name": "UPS Express",
+          "description": "Livraison express à domicile",
+          "price": 12.99,
+          "estimatedDays": {
+            "min": 1,
+            "max": 1
+          },
+          "features": [
+            "tracking",
+            "signature",
+            "insurance",
+            "express"
+          ]
+        }
+      ]
+    },
+    "mondial_relay": {
+      "name": "Mondial Relay",
+      "logo": "/images/checkout/shipping/mondial-relay.svg",
+      "methods": [
+        {
+          "id": "mr_standard",
+          "name": "Point Relais",
+          "description": "Livraison en point relais",
+          "price": 3.50,
+          "estimatedDays": {
+            "min": 3,
+            "max": 4
+          },
+          "features": [
+            "tracking",
+            "relay_point",
+            "insurance"
+          ]
+        }
+      ]
+    }
+  },
+  "features": {
+    "tracking": {
+      "icon": "pi pi-map-marker",
+      "label": {
+        "fr": "Suivi de colis",
+        "en": "Package tracking",
+        "br": "Heuliadur pakad"
+      }
+    },
+    "signature": {
+      "icon": "pi pi-pencil",
+      "label": {
+        "fr": "Signature à la livraison",
+        "en": "Delivery signature",
+        "br": "Sinadur d'al livraison"
+      }
+    },
+    "insurance": {
+      "icon": "pi pi-shield",
+      "label": {
+        "fr": "Assurance incluse",
+        "en": "Insurance included",
+        "br": "Asuradur enkorfet"
+      }
+    },
+    "express": {
+      "icon": "pi pi-clock",
+      "label": {
+        "fr": "Livraison express",
+        "en": "Express delivery",
+        "br": "Kas prim"
+      }
+    },
+    "relay_point": {
+      "icon": "pi pi-home",
+      "label": {
+        "fr": "Point relais",
+        "en": "Pickup point",
+        "br": "Pont kas"
+      }
+    },
+    "time_window": {
+      "icon": "pi pi-calendar",
+      "label": {
+        "fr": "Créneau horaire",
+        "en": "Time window",
+        "br": "Prenestr amzer"
+      }
+    }
+  },
+  "free_shipping_threshold": 49,
+  "default_carrier": "colissimo",
+  "available_countries": ["FR", "BE", "LU", "DE", "CH"]
+} 

@@ -5,25 +5,21 @@
       <!-- Search Bar -->
       <div class="mb-8">
         <div class="relative max-w-xl mx-auto">
-          <span
-            class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500"
-          >
-            <i class="pi pi-search text-lg"></i>
-          </span>
-          <InputText
-            v-model="searchQuery"
-            placeholder="Rechercher un produit..."
-            class="w-full pl-10 pr-4 py-2 border-gray-200 rounded-lg focus:ring-primary-500 focus:border-primary-500"
-            @input="debounceSearch"
-          />
+          <IconField>
+            <InputIcon class="pi pi-search" />
+            <InputText
+              v-model="searchQuery"
+              :placeholder="$t('products.search_placeholder')"
+              class="w-full pr-4 py-2 border-gray-200 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+              @input="debounceSearch"
+            />
+          </IconField>
           <span
             v-if="searchQuery"
             class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
             @click="clearSearch"
           >
-            <i
-              class="pi pi-times text-lg text-gray-400 hover:text-gray-600"
-            ></i>
+            <i class="pi pi-times text-lg text-gray-400 hover:text-gray-600"></i>
           </span>
         </div>
 
@@ -47,9 +43,9 @@
 
       <div class="flex flex-col md:flex-row gap-8">
         <!-- Filters Sidebar -->
-        <div class="w-full md:w-64 space-y-6">
+        <div class="md:w-64 flex-shrink-0 space-y-6">
           <div>
-            <h3 class="text-lg font-medium">Catégories</h3>
+            <h3 class="text-lg font-medium">{{ $t('products.categories') }}</h3>
             <div class="mt-2 space-y-2">
               <div
                 v-for="category in categories"
@@ -72,7 +68,7 @@
           </div>
 
           <div>
-            <h3 class="text-lg font-medium">Prix</h3>
+            <h3 class="text-lg font-medium">{{ $t('products.price') }}</h3>
             <div class="mt-2">
               <Slider
                 v-model="priceRange"
@@ -90,7 +86,7 @@
         </div>
 
         <!-- Products Grid -->
-        <div class="flex-grow">
+        <div class="flex-1 min-w-0">
           <!-- No Results Message -->
           <div
             v-if="filteredProducts.length === 0"
@@ -98,45 +94,28 @@
           >
             <i class="pi pi-search text-4xl text-gray-300"></i>
             <p class="mt-4 text-gray-500">
-              Aucun résultat trouvé pour "{{ searchQuery }}"
+              {{ $t('products.no_results') }} "{{ searchQuery }}"
             </p>
             <Button
-              label="Réinitialiser la recherche"
+              :label="$t('products.reset_search')"
               text
               @click="resetSearch"
               class="mt-2"
             />
           </div>
 
-          <!-- Products Grid (existant) -->
           <div
             v-else
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
           >
-            <div
+            <ProductCard
               v-for="product in filteredProducts"
               :key="product.id"
-              class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow"
-            >
-              <router-link :to="'/product/' + product.id">
-                <img
-                  :src="product.image"
-                  :alt="product.name"
-                  class="w-full h-48 object-cover"
-                />
-              </router-link>
-              <div class="p-4">
-                <h3 class="font-medium">{{ product.name }}</h3>
-                <p class="text-sm text-gray-600 mt-1">{{ product.price }}€</p>
-                <Button
-                  label="Ajouter au panier"
-                  icon="pi pi-shopping-cart"
-                  class="w-full mt-4"
-                  @click="cartStore.addItem(product)"
-                />
-              </div>
-            </div>
+              :product="product"
+              @showLogin="userOP.toggle($event)"
+            />
           </div>
+          
         </div>
       </div>
     </div>
@@ -144,19 +123,34 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from "vue";
-import { useCartStore } from "../stores/cart";
+import { ref, computed, onMounted, watch } from "vue";
+import { useProductsStore } from "../stores/products";
+import { useI18n } from "vue-i18n";
 import Checkbox from "primevue/checkbox";
 import Slider from "primevue/slider";
 import Button from "primevue/button";
 import InputText from "primevue/inputtext";
-import debounce from "lodash/debounce"; // N'oubliez pas d'installer lodash
+import debounce from "lodash/debounce";
+import ProductCard from "../components/ProductCard.vue";
+import IconField from "primevue/iconfield";
+import InputIcon from "primevue/inputicon";
+import categoriesData from '../data/categories.json';
+import { useRoute } from 'vue-router';
 
-const cartStore = useCartStore();
-const showCart = ref(false);
+const productsStore = useProductsStore();
+const { locale } = useI18n();
 const selectedCategories = ref([]);
 const priceRange = ref([0, 200]);
 const searchQuery = ref("");
+const userOP = ref();
+
+const route = useRoute();
+
+
+onMounted(() => {
+  productsStore.loadProducts();
+  initializeSelectedCategory();
+});
 
 // Debounce search function
 const debounceSearch = debounce(() => {
@@ -199,11 +193,11 @@ const activeFilters = computed(() => {
 
 // Updated filtered products computation
 const filteredProducts = computed(() => {
-  return products.value.filter((product) => {
+  return productsStore.getAllProducts.filter((product) => {
     const matchesSearch =
       searchQuery.value === "" ||
-      product.name.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
-      product.description
+      product.name[locale.value].toLowerCase().includes(searchQuery.value.toLowerCase()) ||
+      product.description[locale.value]
         .toLowerCase()
         .includes(searchQuery.value.toLowerCase());
 
@@ -228,7 +222,7 @@ const removeFilter = (filter) => {
     case "category":
       const catId = parseInt(filter.id.split("-")[1]);
       selectedCategories.value = selectedCategories.value.filter(
-        (id) => id !== catId,
+        (id) => id !== catId
       );
       break;
     case "price":
@@ -248,30 +242,30 @@ const resetSearch = () => {
 };
 
 const performSearch = () => {
-  // Ici vous pourriez ajouter une logique supplémentaire
-  // comme le tracking des recherches ou l'appel à une API
-  console.log("Searching for:", searchQuery.value);
 };
 
 // Mock data
-const categories = ref([
-  { id: 1, name: "Gouren" },
-  { id: 2, name: "Boules" },
-  { id: 3, name: "Jeux Traditionnels" },
-]);
+const categories = ref(categoriesData.categories);
 
-const products = ref([
-  {
-    id: 1,
-    name: "Roched Gouren",
-    description:
-      "Vêtement traditionnel pour la pratique du Gouren, fait main en Bretagne",
-    price: 89.99,
-    image: "/images/products/roched.jpg",
-    categoryId: 1,
-  },
-  // Ajouter plus de produits ici
-]);
+// Ajouter cette fonction pour initialiser la catégorie sélectionnée
+const initializeSelectedCategory = () => {
+  const categoryParam = route.query.category;
+  if (categoryParam) {
+    selectedCategories.value = [parseInt(categoryParam)];
+  }
+};
+
+// Ajouter un watcher sur les paramètres de route
+watch(
+  () => route.query.category,
+  (newCategory) => {
+    if (newCategory) {
+      selectedCategories.value = [parseInt(newCategory)];
+    } else {
+      selectedCategories.value = [];
+    }
+  }
+);
 </script>
 
 <style scoped>

@@ -1,0 +1,19 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Lifestyle",
+      "image": "lifestyle.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Outlet",
+      "image": "outlet.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Pro",
+      "image": "pro.jpg"
+    }
+  ]
+}

@@ -6,45 +6,125 @@ export const useCartStore = defineStore("cart", {
   }),
 
   actions: {
-    addItem(product, quantity = 1) {
-      const existingItem = this.items.find(
-        (item) =>
-          item.id === product.id &&
-          item.size === product.size &&
-          item.color === product.color &&
-          item.model === product.model,
-      );
-
-      if (existingItem) {
-        existingItem.quantity += quantity;
-      } else {
-        this.items.push({ ...product, quantity });
+    initializeCart() {
+      const savedCart = localStorage.getItem('cart')
+      const savedTime = localStorage.getItem('cartTimestamp')
+      
+      if (savedCart && savedTime) {
+        const now = new Date().getTime()
+        const cartTime = parseInt(savedTime)
+        
+        if (now - cartTime < 24 * 60 * 60 * 1000) {
+          this.items = JSON.parse(savedCart)
+        } else {
+          localStorage.removeItem('cart')
+          localStorage.removeItem('cartTimestamp')
+        }
       }
     },
 
-    removeItem(productId) {
-      const index = this.items.findIndex((item) => item.id === productId);
+    saveCart() {
+      localStorage.setItem('cart', JSON.stringify(this.items))
+      localStorage.setItem('cartTimestamp', new Date().getTime().toString())
+    },
+
+    addItem(item) {
+      const existingItemIndex = this.items.findIndex(i => 
+        i.id === item.id && 
+        i.size === item.size && 
+        i.color === item.color
+      );
+
+      if (existingItemIndex !== -1) {
+        this.items[existingItemIndex].quantity += item.quantity;
+      } else {
+        this.items.push({ ...item });
+      }
+      this.saveCart()
+    },
+
+    removeItem(itemId, size, color) {
+      const index = this.items.findIndex(i => 
+        i.id === itemId && 
+        i.size === size && 
+        i.color === color
+      );
       if (index > -1) {
         this.items.splice(index, 1);
       }
+      this.saveCart()
     },
 
-    updateQuantity(productId, quantity) {
-      const item = this.items.find((item) => item.id === productId);
+    updateQuantity(itemId, size, color, newQuantity) {
+      const item = this.items.find(i => 
+        i.id === itemId && 
+        i.size === size && 
+        i.color === color
+      );
       if (item) {
-        item.quantity = quantity;
+        item.quantity = newQuantity;
+        this.saveCart();
       }
     },
 
     clearCart() {
       this.items = [];
+      this.saveCart()
+    },
+
+    updateVariant(itemId, oldSize, oldColor, updates) {
+      const itemIndex = this.items.findIndex(i => 
+        i.id === itemId && 
+        i.size === oldSize && 
+        i.color === oldColor
+      );
+      
+      if (itemIndex > -1) {
+        const existingItemIndex = this.items.findIndex(i => 
+          i.id === itemId && 
+          i.size === (updates.size || oldSize) && 
+          i.color === (updates.color || oldColor)
+        );
+
+        if (existingItemIndex !== -1 && existingItemIndex !== itemIndex) {
+          this.items[existingItemIndex].quantity += this.items[itemIndex].quantity;
+          this.items.splice(itemIndex, 1);
+        } else {
+          this.items[itemIndex] = {
+            ...this.items[itemIndex],
+            ...updates
+          };
+        }
+      }
     },
   },
 
   getters: {
-    totalItems: (state) =>
-      state.items.reduce((sum, item) => sum + item.quantity, 0),
-    totalPrice: (state) =>
-      state.items.reduce((sum, item) => sum + item.price * item.quantity, 0),
+    totalItems: (state) => {
+      if (!Array.isArray(state.items)) {
+        state.items = [];
+      }
+      return state.items.reduce((sum, item) => {
+        return sum + (Number(item.quantity) || 0);
+      }, 0);
+    },
+    
+    totalPrice: (state) => {
+      if (!Array.isArray(state.items)) {
+        state.items = [];
+      }
+      return state.items.reduce((sum, item) => {
+        return sum + (Number(item.price) * Number(item.quantity) || 0);
+      }, 0);
+    },
+
+    itemTotalQuantity: (state) => (productId) => {
+      if (!Array.isArray(state.items)) {
+        state.items = [];
+      }
+      return state.items
+        .filter(item => item.id === productId)
+        .reduce((sum, item) => sum + (Number(item.quantity) || 0), 0);
+    }
   },
 });

@@ -11,6 +11,7 @@
   "dependencies": {
     "@iconify-json/feather": "^1.2.0",
     "@primevue/themes": "^4.2.1",
+    "@stripe/stripe-js": "^4.9.0",
     "@tailwindcss/forms": "^0.5.9",
     "@vuelidate/core": "^2.0.3",
     "@vuelidate/validators": "^2.0.4",
@@ -25,7 +26,8 @@
     "tailwindcss": "^3.4.14",
     "vue": "^3.5.12",
     "vue-i18n": "^10.0.4",
-    "vue-router": "^4.4.5"
+    "vue-router": "^4.4.5",
+    "vue3-marquee": "^4.2.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.4",

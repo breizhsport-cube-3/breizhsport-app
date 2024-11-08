@@ -1,0 +1,368 @@
+{
+  "promotions": {
+    "black_friday": "🔥 BLACK FRIDAY : Profitez de -50% sur tout le site avec le code BREIZHFRIDAY50 ! 🛍️"
+  },
+  "auth": {
+    "welcome": "Bienvenue",
+    "login": {
+      "title": "Connexion",
+      "description": "Bienvenue ! Connectez-vous à votre compte.",
+      "email": "Email",
+      "password": "Mot de passe",
+      "forgot_password": "Mot de passe oublié ?",
+      "sign_in": "Se connecter",
+      "dont_have_account": "Vous n'avez pas de compte ?",
+      "sign_up": "S'inscrire",
+      "remember_me": "Se souvenir de moi ?",
+      "invalid_credentials": "Email ou mot de passe invalide",
+      "logout": "Se déconnecter",
+      "my_account": "Mon compte",
+      "email_placeholder": "Entrez votre email",
+      "password_placeholder": "Entrez votre mot de passe",
+      "submit": "Se connecter"
+    },
+    "or": "ou",
+    "register": {
+      "title": "Inscription",
+      "description": "Découvrez les sports bretons et embarquez avec nous !",
+      "first_name": "Prénom",
+      "last_name": "Nom",
+      "email": "Email",
+      "password": "Mot de passe",
+      "password_confirmation": "Confirmation du mot de passe",
+      "sign_up": "S'inscrire",
+      "already_have_account": "Vous avez déjà un compte ?",
+      "sign_in": "Se connecter"
+    },
+    "forgot_password": {
+      "title": "Mot de passe oublié ?",
+      "description": "Réinitialisez votre mot de passe.",
+      "email": "Email",
+      "reset_password": "Réinitialiser le mot de passe",
+      "remember_password": "Vous avez déjà un compte ?",
+      "sign_in": "Se connecter"
+    }
+  },
+  "shop": {
+    "navigation": {
+      "products": "Produits",
+      "cart": "Panier"
+    },
+    "search": {
+      "placeholder": "Rechercher un produit...",
+      "no_results": "Aucun résultat trouvé pour \"{query}\"",
+      "reset": "Réinitialiser la recherche"
+    },
+    "filters": {
+      "categories": "Catégories",
+      "price": "Prix",
+      "price_range": "Prix: {min}€ - {max}€",
+      "search_label": "Recherche: {query}"
+    },
+    "product": {
+      "add_to_cart": "Ajouter au panier",
+      "buy_now": "Acheter maintenant",
+      "size": "Taille",
+      "quantity": "Quantité",
+      "description": {
+        "title": "Description",
+        "features": "Caractéristiques",
+        "care": "Entretien"
+      },
+      "features": "Caractéristiques",
+      "delivery": "Livraison",
+      "delivery_info": {
+        "free": "Livraison gratuite en France métropolitaine",
+        "estimate": "Délai de livraison estimé : 2-4 jours ouvrés"
+      },
+      "model": {
+        "title": "Modèle",
+        "standard": "Standard",
+        "premium": "Premium",
+        "pro": "Professionnel"
+      },
+      "reviews": "avis",
+      "stock": {
+        "in_stock": "En stock",
+        "out_of_stock": "Rupture de stock"
+      },
+      "size_guide": "Guide des tailles",
+      "size_guide_table": {
+        "size": "Taille",
+        "chest": "Tour de poitrine",
+        "waist": "Tour de taille",
+        "hips": "Tour de hanches"
+      },
+      "size_guide_how_to_measure": {
+        "title": "Comment prendre vos mesures",
+        "chest": "Mesurez horizontalement autour de la partie la plus large de votre poitrine",
+        "waist": "Mesurez autour de votre taille naturelle, au niveau du nombril",
+        "hips": "Mesurez horizontalement autour de la partie la plus large de vos hanches"
+      },
+      "out_of_stock": "Rupture de stock",
+      "gallery": "Galerie d'images",
+      "color": {
+        "title": "Couleur"
+      }
+    },
+    "cart": {
+      "title": "Panier",
+      "empty": "Votre panier est vide",
+      "subtotal": "Sous-total",
+      "shipping": "Frais de livraison",
+      "total": "Total",
+      "free": "Calculés à l'étape suivante",
+      "checkout": "Commander",
+      "view_cart": "Voir le panier",
+      "added_to_cart": "Produit ajouté au panier",
+      "continue_shopping": "Continuer mes achats",
+      "summary": "Récapitulatif de la commande",
+      "unit_price": "Prix unitaire",
+      "updated": "Panier mis à jour",
+      "added": "Produit ajouté",
+      "added_detail": "Le produit a été ajouté à votre panier"
+    }
+  },
+  "checkout": {
+    "title": "Commande",
+    "steps": {
+      "address": "Adresse",
+      "shipping": "Livraison",
+      "payment": "Paiement",
+      "confirmation": "Confirmation"
+    },
+    "address": {
+      "title": "Adresse de livraison",
+      "first_name": "Prénom",
+      "first_name_placeholder": "Votre prénom",
+      "last_name": "Nom",
+      "last_name_placeholder": "Votre nom",
+      "email": "Email",
+      "email_placeholder": "votre@email.com",
+      "phone": "Téléphone",
+      "phone_placeholder": "Votre numéro de téléphone",
+      "address": "Adresse",
+      "address_placeholder": "Votre adresse",
+      "city": "Ville",
+      "city_placeholder": "Votre ville",
+      "postal_code": "Code postal",
+      "postal_code_placeholder": "Votre code postal",
+      "country": "Pays",
+      "country_placeholder": "Votre pays"
+    },
+    "shipping": {
+      "title": "Adresse de livraison",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "address": "Adresse",
+      "city": "Ville",
+      "postalCode": "Code postal",
+      "country": "Pays",
+      "method": {
+        "title": "Mode de livraison"
+      },
+      "delivery_time_single": "Livraison en {days} jour",
+      "delivery_time_range": "Livraison en {min} à {max} jours"
+    },
+    "payment": {
+      "title": "Paiement",
+      "secure_payment": "Paiement sécurisé",
+      "errors": {
+        "invalid_number": "Le numéro de carte est invalide",
+        "invalid_expiry": "La date d'expiration est invalide",
+        "invalid_cvc": "Le code de sécurité est invalide",
+        "processing_error": "Une erreur est survenue lors du traitement du paiement"
+      },
+      "pay": "Payer",
+      "processing": "Traitement en cours..."
+    },
+    "confirmation": {
+      "thank_you": "Merci pour votre commande",
+      "order_number": "Numéro de commande",
+      "order_details": "Détails de la commande",
+      "order_date": "Date de commande",
+      "estimated_delivery": "Livraison estimée"
+    },
+    "summary": {
+      "title": "Récapitulatif",
+      "subtotal": "Sous-total",
+      "shipping": "Frais de livraison",
+      "total": "Total",
+      "not_selected": "Non sélectionné",
+      "shipping_calculated_later": "Calculé à l'étape livraison"
+    },
+    "next": "Suivant",
+    "back": "Retour"
+  },
+  "validation": {
+    "required": "Ce champ est requis",
+    "email": "Veuillez entrer une adresse email valide",
+    "minLength": "Ce champ doit contenir au moins {min} caractères"
+  },
+  "footer": {
+    "about_text": "Votre destination pour les équipements sportifs en Bretagne. Qualité, tradition et innovation pour tous les sportifs.",
+    "quick_links": "Liens rapides",
+    "home": "Accueil",
+    "products": "Produits",
+    "about": "À propos",
+    "contact": "Contact",
+    "categories": "Catégories",
+    "contact_us": "Contactez-nous",
+    "rights": "Tous droits réservés.",
+    "faq": "FAQ"
+  },
+  "common": {
+    "back": "Retour"
+  },
+  "or": "ou",
+  "home": {
+    "hero_title": "Découvrez les sports bretons",
+    "hero_subtitle": "Équipements sportifs de haute qualité pour les jeux bretons traditionnels",
+    "shop_now": "Achetez maintenant",
+    "featured_products": "Produits vedettes"
+  },
+  "products": {
+    "search_placeholder": "Rechercher un produit...",
+    "categories": "Catégories",
+    "price": "Prix",
+    "no_results": "Aucun résultat trouvé pour",
+    "reset_search": "Réinitialiser la recherche",
+    "search": "Recherche"
+  },
+  "contact": {
+    "description": "Vous avez une question ou besoin d'aide ? Notre équipe est là pour vous accompagner !",
+    "form": {
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Email",
+      "subject": "Sujet",
+      "message": "Message",
+      "submit": "Envoyer le message",
+      "subjects": {
+        "general": "Demande générale",
+        "support": "Support technique",
+        "business": "Collaboration professionnelle"
+      },
+      "success": {
+        "title": "Message envoyé",
+        "message": "Merci pour votre message. Nous vous répondrons rapidement !"
+      },
+      "error": {
+        "title": "Erreur",
+        "message": "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer."
+      },
+      "validation": {
+        "message_max_length": "Le message ne peut pas dépasser {max} caractères"
+      }
+    },
+    "info": {
+      "title": "Informations de contact",
+      "address": {
+        "title": "Adresse"
+      },
+      "phone": {
+        "title": "Téléphone"
+      },
+      "email": {
+        "title": "Email"
+      },
+      "hours": {
+        "title": "Horaires d'ouverture",
+        "weekdays": "Lundi - Vendredi : 9h00 - 18h00",
+        "weekend": "Samedi : 10h00 - 16h00"
+      }
+    },
+    "map": {
+      "title": "Nous trouver"
+    }
+  },
+  "about": {
+    "title": "À propos de Breizhsport",
+    "subtitle": "Votre partenaire de confiance en équipement sportif breton depuis 2014",
+    "story": {
+      "title": "Notre Histoire",
+      "content": "Fondé en 2014, Breizhsport est né d'une passion pour les sports bretons et d'une volonté de préserver et promouvoir notre riche patrimoine sportif. Ce qui a commencé comme une petite boutique locale est devenu le principal fournisseur d'équipements de sports traditionnels en Bretagne."
+    },
+    "stats": {
+      "years": "Années d'expérience",
+      "customers": "Clients satisfaits"
+    },
+    "values": {
+      "title": "Nos Valeurs",
+      "quality": {
+        "title": "Qualité",
+        "description": "Nous sélectionnons et fournissons uniquement des équipements sportifs de la plus haute qualité."
+      },
+      "tradition": {
+        "title": "Tradition",
+        "description": "Préserver et promouvoir le patrimoine sportif breton."
+      },
+      "community": {
+        "title": "Communauté",
+        "description": "Construire des relations solides avec les communautés sportives locales."
+      }
+    },
+    "team": {
+      "title": "Notre Équipe",
+      "positions": {
+        "ceo": "Fondateur & PDG",
+        "marketing": "Directrice Marketing",
+        "operations": "Responsable des Opérations"
+      }
+    }
+  },
+  "faq": {
+    "title": "Questions Fréquentes",
+    "subtitle": "Trouvez rapidement des réponses à vos questions",
+    "categories": {
+      "shipping": "Livraison",
+      "returns": "Retours",
+      "products": "Produits",
+      "payment": "Paiement"
+    },
+    "questions": {
+      "shipping": {
+        "time": {
+          "question": "Quel est le délai de livraison ?",
+          "answer": "La livraison est généralement effectuée sous 2-4 jours ouvrés en France métropolitaine."
+        },
+        "cost": {
+          "question": "Combien coûte la livraison ?",
+          "answer": "Les frais de livraison sont calculés en fonction du mode de livraison choisi et de votre adresse."
+        }
+      },
+      "returns": {
+        "policy": {
+          "question": "Quelle est votre politique de retour ?",
+          "answer": "Vous disposez de 30 jours pour retourner un article. L'article doit être dans son état d'origine."
+        },
+        "process": {
+          "question": "Comment effectuer un retour ?",
+          "answer": "Connectez-vous à votre compte, sélectionnez la commande concernée et suivez les instructions pour générer une étiquette de retour."
+        }
+      },
+      "products": {
+        "size": {
+          "question": "Comment choisir la bonne taille ?",
+          "answer": "Consultez notre guide des tailles disponible sur chaque fiche produit pour trouver la taille qui vous convient le mieux."
+        },
+        "stock": {
+          "question": "Un article est en rupture de stock, quand sera-t-il à nouveau disponible ?",
+          "answer": "Les délais de réapprovisionnement varient selon les produits. Vous pouvez vous inscrire aux alertes de stock pour être notifié dès que l'article est à nouveau disponible."
+        }
+      },
+      "payment": {
+        "methods": {
+          "question": "Quels sont les moyens de paiement acceptés ?",
+          "answer": "Nous acceptons les cartes bancaires (Visa, Mastercard), PayPal et les virements bancaires."
+        },
+        "security": {
+          "question": "Les paiements sont-ils sécurisés ?",
+          "answer": "Oui, tous nos paiements sont sécurisés avec un cryptage SSL et nous respectons les normes de sécurité PCI DSS."
+        }
+      }
+    }
+  }
+} 

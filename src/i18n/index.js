@@ -1,7 +1,8 @@
 import { createI18n } from "vue-i18n";
-import fr from "../langs/fr.json";
-import en from "../langs/en.json";
-import br from "../langs/br.json";
+import fr from "../locales/fr.json";
+import en from "../locales/en.json";
+import br from "../locales/br.json";
+
 export const availableLocales = {
   fr: {
     label: "Français",
@@ -17,7 +18,6 @@ export const availableLocales = {
   },
 };
 
-// Récupérer la langue stockée ou utiliser la langue par défaut
 const savedLocale = localStorage.getItem("userLocale") || "fr";
 
 const i18n = createI18n({
@@ -31,7 +31,6 @@ const i18n = createI18n({
   },
 });
 
-// Créer une fonction pour changer la langue qui gère aussi le localStorage
 export function setLocale(newLocale) {
   i18n.global.locale.value = newLocale;
   localStorage.setItem("userLocale", newLocale);

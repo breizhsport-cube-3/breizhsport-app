@@ -5,6 +5,9 @@ import Products from "../views/Products.vue";
 import Product from "../views/Product.vue";
 import Cart from "../views/Cart.vue";
 import Checkout from "../views/Checkout.vue";
+import Contact from "../views/Contact.vue";
+import About from "../views/About.vue";
+import FAQ from "../views/FAQ.vue";
 
 const routes = [
   {
@@ -31,6 +34,21 @@ const routes = [
     path: "/checkout",
     name: "checkout",
     component: Checkout,
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    component: Contact,
+  },
+  {
+    path: "/about",
+    name: "About",
+    component: About,
+  },
+  {
+    path: "/faq",
+    name: "FAQ",
+    component: FAQ,
   },
   {
     path: "/:pathMatch(.*)*",

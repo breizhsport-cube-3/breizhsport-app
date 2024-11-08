@@ -23,14 +23,14 @@
           <router-link :to="`/product/${item.id}`" class="flex-shrink-0">
             <img
               :src="item.images[0]"
-              :alt="item.name"
+              :alt="item.name[currentLocale]"
               class="w-14 h-14 object-cover rounded hover:opacity-80 transition-opacity"
             />
           </router-link>
           <div class="ml-3 flex-grow">
             <router-link :to="`/product/${item.id}`">
               <h3 class="font-medium text-sm hover:text-primary-600">
-                {{ item.name }}
+                {{ item.name[currentLocale] }}
               </h3>
             </router-link>
             <div class="text-xs text-gray-600 space-y-0.5">
@@ -38,9 +38,9 @@
               <p v-if="item.size">
                 {{ t("shop.product.size") }}: {{ item.size }}
               </p>
-              <p v-if="item.color">
+              <p v-if="item.colorData">
                 {{ t("shop.product.color.title") }}:
-                {{ t(`shop.product.color.variants.${item.color}`) }}
+                {{ item.colorData.name[currentLocale] }}
               </p>
             </div>
           </div>
@@ -97,7 +97,10 @@ import { useCartStore } from "../stores/cart";
 import { useI18n } from "vue-i18n";
 import { useRouter } from "vue-router";
 import Button from "primevue/button";
+import { computed } from "vue";
 
+const { locale } = useI18n();
+const currentLocale = computed(() => locale.value);
 const router = useRouter();
 const cartStore = useCartStore();
 const { t } = useI18n();

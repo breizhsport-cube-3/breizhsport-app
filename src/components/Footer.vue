@@ -53,6 +53,11 @@
                 {{ t("footer.contact") }}
               </router-link>
             </li>
+            <li>
+              <router-link to="/faq" class="text-sm hover:text-primary-500">
+                {{ t("footer.faq") }}
+              </router-link>
+            </li>
           </ul>
         </div>
 
@@ -62,36 +67,12 @@
             {{ t("footer.categories") }}
           </h3>
           <ul class="space-y-2">
-            <li>
+            <li v-for="category in categories" :key="category.id">
               <router-link
-                to="/products?category=1"
+                :to="`/products?category=${category.id}`"
                 class="text-sm hover:text-primary-500"
               >
-                {{ t("categories.gouren") }}
-              </router-link>
-            </li>
-            <li>
-              <router-link
-                to="/products?category=2"
-                class="text-sm hover:text-primary-500"
-              >
-                {{ t("categories.running") }}
-              </router-link>
-            </li>
-            <li>
-              <router-link
-                to="/products?category=3"
-                class="text-sm hover:text-primary-500"
-              >
-                {{ t("categories.football") }}
-              </router-link>
-            </li>
-            <li>
-              <router-link
-                to="/products?category=4"
-                class="text-sm hover:text-primary-500"
-              >
-                {{ t("categories.basketball") }}
+                {{ category.name }}
               </router-link>
             </li>
           </ul>
@@ -147,6 +128,9 @@
 <script setup>
 import { useI18n } from "vue-i18n";
 import Logo from "./Logo.vue";
+import categoriesData from '../data/categories.json';
+import { ref } from 'vue';
 
 const { t } = useI18n();
+const categories = ref(categoriesData.categories);
 </script>
