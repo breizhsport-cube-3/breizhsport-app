@@ -42,14 +42,10 @@ export const useCartStore = defineStore("cart", {
       this.saveCart();
     },
 
-    removeItem(itemId, size, color) {
-      const index = this.items.findIndex(
-        (i) => i.id === itemId && i.size === size && i.color === color,
+    removeItem(id, size, color) {
+      this.items = this.items.filter(
+        item => !(item.id === id && item.size === size && item.color === color)
       );
-      if (index > -1) {
-        this.items.splice(index, 1);
-      }
-      this.saveCart();
     },
 
     updateQuantity(itemId, size, color, newQuantity) {

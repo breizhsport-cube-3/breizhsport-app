@@ -59,7 +59,7 @@
               rounded
               text
               @click="toggleCart"
-              :badge="cartStore.totalItems"
+              :badge="cartStore.totalItems || '0'"
             >
             </Button>
 

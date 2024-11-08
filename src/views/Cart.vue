@@ -90,7 +90,7 @@
                       icon="pi pi-trash"
                       text
                       severity="danger"
-                      @click="cartStore.removeItem(item.id)"
+                      @click="cartStore.removeItem(item.id, item.size, item.color)"
                       class="p-2"
                     />
                   </div>
